@@ -1702,19 +1702,29 @@ p strong {
     background-color: var(--bg-card);
     box-shadow: var(--soft-shadow);
     overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.map-wrapper:hover {
+    transform: translateY(-8px);
+    border-color: rgba(200, 169, 106, 0.45);
+    box-shadow: var(--hover-shadow), var(--gold-glow);
 }
 
 .map-wrapper iframe {
     display: block;
     border-radius: 16px;
-    /* Soft warm sepia filter matching warm luxury linen resorts */
-    filter: sepia(0.35) contrast(0.95) saturate(0.85) brightness(1.02);
-    transition: var(--transition-slow);
+    /* Proper natural map colors all the time (no sepia or washed out default) */
+    filter: none;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .map-wrapper:hover iframe {
-    filter: sepia(0) contrast(1) saturate(1) brightness(1);
+    transform: scale(1.03);
 }
+
 
 /* ==========================================
    FOOTER (ELEGANT TROPICAL CHARCOAL MINIMAL)
