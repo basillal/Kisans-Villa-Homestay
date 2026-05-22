@@ -107,13 +107,44 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================
        3. INTERACTIVE HORIZONTAL SCROLL & DRAG SYSTEM (ATTRACTIONS)
        ========================================== */
-    const attractionsGrid = document.getElementById('attractions-grid');
+    const attractionsGrid = document.getElementById('attractions-track');
     const scrollFill = document.getElementById('attractions-progress');
+    const prevBtn = document.getElementById('attractions-prev');
+    const nextBtn = document.getElementById('attractions-next');
 
-    if (attractionsGrid && scrollFill) {
+    if (attractionsGrid) {
+
+        // --- Auto Scroll (slow drift left) ---
+        let autoScrollInterval = null;
+        const SCROLL_SPEED = 0.8; // px per frame
+
+        function startAutoScroll() {
+            if (autoScrollInterval) return;
+            autoScrollInterval = setInterval(() => {
+                const maxScroll = attractionsGrid.scrollWidth - attractionsGrid.clientWidth;
+                if (attractionsGrid.scrollLeft >= maxScroll) {
+                    attractionsGrid.scrollLeft = 0; // loop back
+                } else {
+                    attractionsGrid.scrollLeft += SCROLL_SPEED;
+                }
+                updateScrollProgress();
+            }, 16); // ~60fps
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+            autoScrollInterval = null;
+        }
+
+        startAutoScroll();
+
+        // Pause on hover
+        attractionsGrid.addEventListener('mouseenter', stopAutoScroll);
+        attractionsGrid.addEventListener('mouseleave', startAutoScroll);
 
         // Track Scroll Progression Width
         const updateScrollProgress = () => {
+            if (!scrollFill) return;
             const maxScroll = attractionsGrid.scrollWidth - attractionsGrid.clientWidth;
             if (maxScroll <= 0) return;
             const percentage = (attractionsGrid.scrollLeft / maxScroll) * 100;
@@ -123,6 +154,25 @@ document.addEventListener('DOMContentLoaded', () => {
         attractionsGrid.addEventListener('scroll', updateScrollProgress, { passive: true });
         window.addEventListener('resize', updateScrollProgress, { passive: true });
 
+        // Arrow Buttons
+        const CARD_SCROLL = 430; // approx card width + gap
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                attractionsGrid.scrollBy({ left: -CARD_SCROLL, behavior: 'smooth' });
+                setTimeout(startAutoScroll, 3000); // resume after 3s
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                stopAutoScroll();
+                attractionsGrid.scrollBy({ left: CARD_SCROLL, behavior: 'smooth' });
+                setTimeout(startAutoScroll, 3000);
+            });
+        }
+
         // Desktop Click and Drag Scrolling
         let isDown = false;
         let startX;
@@ -130,6 +180,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         attractionsGrid.addEventListener('mousedown', (e) => {
             isDown = true;
+            stopAutoScroll();
             attractionsGrid.classList.add('active');
             startX = e.pageX - attractionsGrid.offsetLeft;
             scrollLeft = attractionsGrid.scrollLeft;
@@ -143,13 +194,14 @@ document.addEventListener('DOMContentLoaded', () => {
         attractionsGrid.addEventListener('mouseup', () => {
             isDown = false;
             attractionsGrid.classList.remove('active');
+            setTimeout(startAutoScroll, 2000);
         });
 
         attractionsGrid.addEventListener('mousemove', (e) => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - attractionsGrid.offsetLeft;
-            const walk = (x - startX) * 2; // Scroll multiplier
+            const walk = (x - startX) * 2;
             attractionsGrid.scrollLeft = scrollLeft - walk;
         });
     }

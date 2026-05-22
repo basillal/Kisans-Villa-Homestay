@@ -8,25 +8,33 @@
    DESIGN TOKENS & VARIABLES (WARM RESORT THEME)
    ========================================== */
 :root {
-    --primary-bg: #F2ECE0;       /* Soothing Cozy Ivory / Warm Resort Sand */
-    --bg-secondary: #E5DCCB;     /* Grounded Cozy Sand / Earthy Linen */
-    --bg-card: rgba(242, 236, 224, 0.45); /* Soft Warm Sand with reduced opacity (0.45) for supreme comfort */
-    
-    --accent-gold: #C8A96A;      /* Metallic Gold */
+    --primary-bg: #F2ECE0;
+    /* Soothing Cozy Ivory / Warm Resort Sand */
+    --bg-secondary: #E5DCCB;
+    /* Grounded Cozy Sand / Earthy Linen */
+    --bg-card: rgba(242, 236, 224, 0.45);
+    /* Soft Warm Sand with reduced opacity (0.45) for supreme comfort */
+
+    --accent-gold: #C8A96A;
+    /* Metallic Gold */
     --accent-gold-rgb: 200, 169, 106;
     --accent-gold-hover: #DBC088;
-    --accent-champagne: #E6D3A3;  /* Champagne Gold */
-    --accent-teal: #A4C4AB;      /* Soft Tropical Green/Teal */
-    
-    --text-primary: #2B2B2B;     /* Charcoal Dark Gray */
-    --text-secondary: #6E6E6E;   /* Muted Slate Gray */
+    --accent-champagne: #E6D3A3;
+    /* Champagne Gold */
+    --accent-teal: #A4C4AB;
+    /* Soft Tropical Green/Teal */
+
+    --text-primary: #2B2B2B;
+    /* Charcoal Dark Gray */
+    --text-secondary: #6E6E6E;
+    /* Muted Slate Gray */
     --text-light: #9B9B9B;
-    
+
     /* Fonts */
     --font-heading: 'Cormorant Garamond', Georgia, serif;
     --font-accent: 'Fraunces', Georgia, serif;
     --font-body: 'Outfit', sans-serif;
-    
+
     /* Layout & Curves */
     --card-radius: 22px;
     --pill-radius: 50px;
@@ -34,17 +42,19 @@
     --transition-medium: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     --transition-fast: all 0.25s ease;
     --section-padding: 120px 0;
-    
+
     /* Luxury Glassmorphism & Depth Shadows */
     --soft-shadow: 0 15px 35px rgba(183, 168, 143, 0.14);
     --hover-shadow: 0 25px 50px rgba(183, 168, 143, 0.25);
     --gold-glow: 0 10px 30px rgba(200, 169, 106, 0.2);
-    --glass-border: rgba(200, 169, 106, 0.15); /* Soft warm gold edge to eliminate harsh white glare */
+    --glass-border: rgba(200, 169, 106, 0.15);
+    /* Soft warm gold edge to eliminate harsh white glare */
     --glass-border-gold: rgba(200, 169, 106, 0.22);
-    --inner-highlight: inset 0 1px 0 rgba(242, 236, 224, 0.5); /* Soothing warm sand highlight */
-    
+    --inner-highlight: inset 0 1px 0 rgba(242, 236, 224, 0.5);
+    /* Soothing warm sand highlight */
+
     /* Gradients */
-    --gold-gradient: linear-gradient(135deg, #C8A96A 0%, #E6D3A3 100%);
+    --gold-gradient: linear-gradient(135deg, #ad8e51 0%, #E6D3A3 100%);
     --sunlight-gradient: linear-gradient(180deg, rgba(242, 236, 224, 0.15) 0%, #F2ECE0 100%);
     --tropical-gradient: linear-gradient(135deg, rgba(164, 196, 171, 0.15) 0%, rgba(230, 211, 163, 0.18) 100%);
 }
@@ -52,7 +62,9 @@
 /* ==========================================
    BASE STYLES & RESET
    ========================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -89,7 +101,9 @@ ul {
     list-style: none;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
     font-family: inherit;
     background: transparent;
     border: none;
@@ -101,14 +115,17 @@ input, select, textarea {
     width: 8px;
     height: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb {
     background: var(--accent-gold);
     border-radius: var(--pill-radius);
     border: 2px solid var(--bg-secondary);
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-gold-hover);
 }
@@ -116,7 +133,12 @@ input, select, textarea {
 /* ==========================================
    TYPOGRAPHY & ACCENTS (LUXURY EDITORIAL)
    ========================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--text-primary);
     font-weight: 300;
@@ -316,33 +338,73 @@ p strong {
    DEFAULT AMBIENT ANIMATIONS (CARD FLOAT & GRADIENT DRIFT)
    ========================================== */
 @keyframes floatCard {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes floatCardAlt {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-7px); }
-    100% { transform: translateY(0px); }
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
 }
 
 @keyframes breathScale {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.025); }
-    100% { transform: scale(1); }
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.025);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes slowGlowDrift {
-    0% { transform: translate(0px, 0px) rotate(0deg) scale(1); }
-    50% { transform: translate(60px, -40px) rotate(180deg) scale(1.18); }
-    100% { transform: translate(0px, 0px) rotate(360deg) scale(1); }
+    0% {
+        transform: translate(0px, 0px) rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: translate(60px, -40px) rotate(180deg) scale(1.18);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(360deg) scale(1);
+    }
 }
 
 @keyframes slowGlowDriftReverse {
-    0% { transform: translate(0px, 0px) rotate(360deg) scale(1.1); }
-    50% { transform: translate(-50px, 60px) rotate(180deg) scale(0.9); }
-    100% { transform: translate(0px, 0px) rotate(0deg) scale(1.1); }
+    0% {
+        transform: translate(0px, 0px) rotate(360deg) scale(1.1);
+    }
+
+    50% {
+        transform: translate(-50px, 60px) rotate(180deg) scale(0.9);
+    }
+
+    100% {
+        transform: translate(0px, 0px) rotate(0deg) scale(1.1);
+    }
 }
 
 /* Layered Soft Tropical Glow Background Blobs */
@@ -405,11 +467,12 @@ p strong {
 
 #main-header.scrolled {
     padding: 18px 0;
-    background-color: rgba(247, 243, 238, 0.82);
+    /* Rich obsidian black with reduced translucent opacity */
+    background-color: rgba(10, 11, 13, 0.65);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border-bottom: 1px solid rgba(200, 169, 106, 0.12);
-    box-shadow: 0 4px 30px rgba(183, 168, 143, 0.08);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 #main-header nav {
@@ -490,17 +553,27 @@ p strong {
     transition: var(--transition-fast);
 }
 
-.mobile-menu-btn span:nth-child(1) { top: 0px; }
-.mobile-menu-btn span:nth-child(2) { top: 9px; }
-.mobile-menu-btn span:nth-child(3) { top: 18px; }
+.mobile-menu-btn span:nth-child(1) {
+    top: 0px;
+}
+
+.mobile-menu-btn span:nth-child(2) {
+    top: 9px;
+}
+
+.mobile-menu-btn span:nth-child(3) {
+    top: 18px;
+}
 
 .mobile-menu-btn.open span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
     background-color: var(--accent-gold);
 }
+
 .mobile-menu-btn.open span:nth-child(2) {
     opacity: 0;
 }
+
 .mobile-menu-btn.open span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
     background-color: var(--accent-gold);
@@ -527,7 +600,7 @@ p strong {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-image: linear-gradient(to bottom, rgba(247, 243, 238, 0.1) 0%, rgba(247, 243, 238, 0.88) 92%), url('assets/hero-exterior.jpg');
+    background-image: linear-gradient(to bottom, rgba(247, 243, 238, 0.1) 0%, rgba(247, 243, 238, 0.88) 92%), url('assets/kisan-villa-landing.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -535,8 +608,13 @@ p strong {
 }
 
 @keyframes heroZoom {
-    0% { transform: scale(1.12); }
-    100% { transform: scale(1.03); }
+    0% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1.03);
+    }
 }
 
 .hero-content {
@@ -582,14 +660,18 @@ p strong {
 }
 
 .hero-content p.reveal-text-sub {
-    font-size: 1.15rem;
-    color: var(--text-secondary);
+    font-size: 0.98rem;
+    color: #2b281c;
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
     max-width: 680px;
     margin-bottom: 45px;
     opacity: 0;
     transform: translateY(30px);
     animation: revealIn 1.2s forwards cubic-bezier(0.16, 1, 0.3, 1) 0.4s;
     line-height: 1.9;
+    letter-spacing: 0.01em;
 }
 
 .hero-btns {
@@ -619,17 +701,17 @@ p strong {
 .stat-number {
     font-family: var(--font-heading);
     font-size: 2.4rem;
-    color: var(--accent-gold);
+    color: #734F19;
     margin-bottom: 5px;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .stat-text {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--text-secondary);
-    font-weight: 500;
+    color: #7A4E2D;
+    font-weight: 600;
 }
 
 @keyframes revealIn {
@@ -651,14 +733,15 @@ p strong {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    color: var(--text-secondary);
+    color: #2D5A3D;
+    font-weight: 600;
     z-index: 2;
 }
 
 .scroll-indicator .mouse {
     width: 22px;
     height: 34px;
-    border: 1.5px solid rgba(200, 169, 106, 0.5);
+    border: 1.5px solid #2D5A3D;
     border-radius: 12px;
     position: relative;
 }
@@ -668,7 +751,7 @@ p strong {
     position: absolute;
     width: 3px;
     height: 6px;
-    background-color: var(--accent-gold);
+    background-color: #2D5A3D;
     left: 50%;
     transform: translateX(-50%);
     top: 6px;
@@ -677,8 +760,15 @@ p strong {
 }
 
 @keyframes scrollMouse {
-    0% { transform: translate(-50%, 0); opacity: 1; }
-    100% { transform: translate(-50%, 12px); opacity: 0; }
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, 12px);
+        opacity: 0;
+    }
 }
 
 /* ==========================================
@@ -694,7 +784,8 @@ p strong {
     font-size: 1.05rem;
     line-height: 1.95;
     margin-bottom: 25px;
-    max-width: 660px; /* Editorial text width limits */
+    max-width: 660px;
+    /* Editorial text width limits */
 }
 
 .ideal-for {
@@ -843,17 +934,36 @@ p strong {
     transition: var(--transition-slow);
     position: relative;
     box-shadow: var(--soft-shadow), var(--inner-highlight);
-    
+
     /* Default animated float so UI feels alive even without hover */
     animation: floatCard 10s infinite ease-in-out;
 }
 
 /* Stagger floating offsets and speed */
-.amenity-card:nth-child(2) { animation-delay: 1.5s; animation-duration: 9s; }
-.amenity-card:nth-child(3) { animation-delay: 3s; animation-duration: 11s; }
-.amenity-card:nth-child(4) { animation-delay: 0.5s; animation-duration: 10s; }
-.amenity-card:nth-child(5) { animation-delay: 2.2s; animation-duration: 9.5s; }
-.amenity-card:nth-child(6) { animation-delay: 3.5s; animation-duration: 10.5s; }
+.amenity-card:nth-child(2) {
+    animation-delay: 1.5s;
+    animation-duration: 9s;
+}
+
+.amenity-card:nth-child(3) {
+    animation-delay: 3s;
+    animation-duration: 11s;
+}
+
+.amenity-card:nth-child(4) {
+    animation-delay: 0.5s;
+    animation-duration: 10s;
+}
+
+.amenity-card:nth-child(5) {
+    animation-delay: 2.2s;
+    animation-duration: 9.5s;
+}
+
+.amenity-card:nth-child(6) {
+    animation-delay: 3.5s;
+    animation-duration: 10.5s;
+}
 
 .amenity-card::before {
     content: '';
@@ -913,6 +1023,46 @@ p strong {
     margin-top: 60px;
 }
 
+/* Arrow Buttons */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    z-index: 10;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid rgba(200, 169, 106, 0.5);
+    background: rgba(242, 236, 224, 0.92);
+    color: var(--accent-gold);
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 20px rgba(200, 169, 106, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.slider-arrow-left  { left: -25px; }
+.slider-arrow-right { right: -25px; }
+
+.attractions-slider-container:hover .slider-arrow {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slider-arrow:hover {
+    background: var(--accent-gold);
+    color: #fff;
+    border-color: var(--accent-gold);
+    box-shadow: var(--gold-glow);
+}
+
+
 .attractions-grid {
     display: flex;
     gap: 40px;
@@ -943,7 +1093,7 @@ p strong {
     box-shadow: var(--soft-shadow), var(--inner-highlight);
     transition: var(--transition-slow);
     overflow: hidden;
-    
+
     /* Default animated float */
     animation: floatCardAlt 8s infinite ease-in-out;
 }
@@ -1340,7 +1490,7 @@ p strong {
     padding: 55px;
     box-shadow: var(--soft-shadow), var(--inner-highlight);
     transition: var(--transition-slow);
-    
+
     /* Default animated breathe float */
     animation: floatCard 12s infinite ease-in-out;
 }
@@ -1519,7 +1669,7 @@ p strong {
     transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
     pointer-events: none;
     box-shadow: var(--soft-shadow), var(--inner-highlight);
-    
+
     /* Default animated float */
     animation: floatCardAlt 9s infinite ease-in-out;
 }
@@ -1702,9 +1852,9 @@ p strong {
     background-color: var(--bg-card);
     box-shadow: var(--soft-shadow);
     overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), 
-                box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .map-wrapper:hover {
@@ -1730,7 +1880,8 @@ p strong {
    FOOTER (ELEGANT TROPICAL CHARCOAL MINIMAL)
    ========================================== */
 footer {
-    background-color: #242220; /* Dark warm charcoal for subtle grounding */
+    background-color: #242220;
+    /* Dark warm charcoal for subtle grounding */
     border-top: 1px solid rgba(200, 169, 106, 0.15);
     padding: 95px 0 45px;
     color: #DFDFDF;
@@ -1973,7 +2124,8 @@ footer {
    STICKY BOTTOM MOBILE ACTION NAVIGATION (ROUNDED PILL)
    ========================================== */
 .sticky-mobile-nav {
-    display: none; /* Desktop hidden */
+    display: none;
+    /* Desktop hidden */
     position: fixed;
     bottom: 20px;
     left: 5%;
@@ -1983,7 +2135,8 @@ footer {
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     border: 1px solid rgba(200, 169, 106, 0.3);
-    border-radius: 40px; /* High luxury pill shape */
+    border-radius: 40px;
+    /* High luxury pill shape */
     box-shadow: 0 10px 30px rgba(183, 168, 143, 0.2);
     z-index: 999;
     overflow: hidden;
@@ -2044,7 +2197,7 @@ footer {
     .container {
         padding: 0 30px;
     }
-    
+
     .about .grid,
     .tours .grid,
     .booking .grid,
@@ -2058,7 +2211,7 @@ footer {
     .section-padding {
         padding: 85px 0;
     }
-    
+
     .about .grid,
     .tours .grid,
     .booking .grid,
@@ -2066,43 +2219,43 @@ footer {
         grid-template-columns: 1fr;
         gap: 50px;
     }
-    
+
     .about-image {
         order: -1;
     }
-    
+
     .amenities-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .experiences-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-auto-rows: 200px;
     }
-    
+
     .gallery-item.large {
         grid-column: span 2;
         grid-row: span 2;
     }
-    
+
     .gallery-item:not(.large):not(.wide) {
         grid-column: span 1;
     }
-    
+
     .gallery-item.wide {
         grid-column: span 2;
         grid-row: span 1;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 40px;
     }
-    
+
     .footer-about {
         grid-column: span 2;
     }
@@ -2113,15 +2266,15 @@ footer {
     .container {
         padding: 0 20px;
     }
-    
+
     .nav-cta {
         display: none !important;
     }
-    
+
     .mobile-menu-btn {
         display: block;
     }
-    
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -2140,100 +2293,101 @@ footer {
         z-index: 1050;
         transition: var(--transition-slow);
     }
-    
+
     .nav-links.active {
         right: 0;
     }
-    
+
     .hero-btns {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     .hero-stats {
         gap: 30px;
         flex-wrap: wrap;
     }
-    
+
     .amenities-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
-    
+
     .attraction-card {
         flex: 0 0 300px;
     }
-    
+
     .attraction-img {
         height: 200px;
     }
-    
+
     .experiences-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .experience-card {
         height: 240px;
     }
-    
+
     .booking-card {
         padding: 40px 20px;
     }
-    
+
     .reviews-slider {
         min-height: 480px;
     }
-    
+
     .review-card {
         padding: 40px 20px;
     }
-    
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .footer-about {
         grid-column: span 1;
     }
-    
+
     .footer-bottom {
         flex-direction: column;
         gap: 15px;
         text-align: center;
     }
-    
+
     /* Sticky Mobile Navigation Activation */
     body {
-        padding-bottom: 95px; /* Leave space for floating bottom bar */
+        padding-bottom: 95px;
+        /* Leave space for floating bottom bar */
     }
-    
+
     .sticky-mobile-nav {
         display: flex;
     }
-    
+
     .lightbox-btn {
         width: 45px;
         height: 45px;
     }
-    
+
     .lightbox-prev {
         left: 10px;
     }
-    
+
     .lightbox-next {
         right: 10px;
     }
-    
+
     .lightbox-close {
         top: 20px;
         right: 20px;
     }
-    
+
     .section-header {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .social-links {
         margin-left: 0;
         justify-content: center;
