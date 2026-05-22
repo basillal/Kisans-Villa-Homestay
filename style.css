@@ -733,7 +733,7 @@ p strong {
     font-size: 0.72rem;
     text-transform: uppercase;
     letter-spacing: 0.25em;
-    color: #2D5A3D;
+    color: #734F19;
     font-weight: 600;
     z-index: 2;
 }
@@ -741,7 +741,7 @@ p strong {
 .scroll-indicator .mouse {
     width: 22px;
     height: 34px;
-    border: 1.5px solid #2D5A3D;
+    border: 1.5px solid #734F19;
     border-radius: 12px;
     position: relative;
 }
@@ -751,7 +751,7 @@ p strong {
     position: absolute;
     width: 3px;
     height: 6px;
-    background-color: #2D5A3D;
+    background-color: #734F19;
     left: 50%;
     transform: translateX(-50%);
     top: 6px;
@@ -1047,8 +1047,13 @@ p strong {
     backdrop-filter: blur(8px);
 }
 
-.slider-arrow-left  { left: -25px; }
-.slider-arrow-right { right: -25px; }
+.slider-arrow-left {
+    left: -25px;
+}
+
+.slider-arrow-right {
+    right: -25px;
+}
 
 .attractions-slider-container:hover .slider-arrow {
     opacity: 1;
