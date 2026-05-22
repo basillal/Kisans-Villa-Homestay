@@ -1,174 +1,405 @@
+/**
+ * KISANS VILLA HOMESTAY - LUXURY ENGINE
+ * Core Javascript logic for elite, responsive interactive elements.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
-    // Animated Background Bubbles
-    const bubblesContainer = document.querySelector('.bubbles-container');
-    if (bubblesContainer) {
-        const bubbleCount = 20;
+
+    /* ==========================================
+       1. AMBIENT BACKGROUND GLOW BUBBLES
+       ========================================== */
+    const initAmbientBubbles = () => {
+        const bubblesContainer = document.querySelector('.bubbles-container');
+        if (!bubblesContainer) return;
+
+        const bubbleCount = 22;
+        const colors = [
+            {
+                glow: 'rgba(200, 169, 106, 0.4)', // Warm Metallic Gold
+                base: 'rgba(200, 169, 106, 0.12)',
+                border: 'rgba(200, 169, 106, 0.25)'
+            },
+            {
+                glow: 'rgba(245, 241, 232, 0.3)', // Warm Linen
+                base: 'rgba(245, 241, 232, 0.08)',
+                border: 'rgba(245, 241, 232, 0.15)'
+            },
+            {
+                glow: 'rgba(110, 230, 218, 0.35)', // Ambient Soft Teal
+                base: 'rgba(110, 230, 218, 0.1)',
+                border: 'rgba(110, 230, 218, 0.2)'
+            },
+            {
+                glow: 'rgba(224, 164, 255, 0.35)', // Amethyst Purple
+                base: 'rgba(224, 164, 255, 0.1)',
+                border: 'rgba(224, 164, 255, 0.2)'
+            }
+        ];
+
         for (let i = 0; i < bubbleCount; i++) {
             const bubble = document.createElement('div');
             bubble.classList.add('bubble');
-            
-            const size = Math.random() * 50 + 15; // sizes between 15px and 65px
+
+            const size = Math.random() * 65 + 20; // 20px to 85px
             const left = Math.random() * 100;
-            const delay = Math.random() * 12;
-            const duration = Math.random() * 15 + 10; // between 10s and 25s
-            const opacity = Math.random() * 0.12 + 0.04; // low opacity for background elegance
-            const wobble = Math.random() * 60 - 30; // -30px to 30px lateral sway
-            
-            // Dynamic premium colors for bubbles matching the luxury gradient theme
-            const colors = [
-                {
-                    glow: 'rgba(224, 164, 255, 0.45)', // Amethyst Lavender
-                    base: 'rgba(224, 164, 255, 0.15)',
-                    border: 'rgba(224, 164, 255, 0.35)'
-                },
-                {
-                    glow: 'rgba(255, 138, 174, 0.45)', // Sunset Rose
-                    base: 'rgba(255, 138, 174, 0.15)',
-                    border: 'rgba(255, 138, 174, 0.35)'
-                },
-                {
-                    glow: 'rgba(197, 160, 89, 0.45)', // Champagne Gold
-                    base: 'rgba(197, 160, 89, 0.15)',
-                    border: 'rgba(197, 160, 89, 0.35)'
-                },
-                {
-                    glow: 'rgba(110, 230, 218, 0.45)', // Soft Teal
-                    base: 'rgba(110, 230, 218, 0.15)',
-                    border: 'rgba(110, 230, 218, 0.35)'
-                }
-            ];
-            const colorScheme = colors[Math.floor(Math.random() * colors.length)];
+            const delay = Math.random() * 10;
+            const duration = Math.random() * 20 + 12; // 12s to 32s
+            const opacity = Math.random() * 0.14 + 0.04;
+            const wobble = Math.random() * 80 - 40; // -40px to 40px lateral sway
+
+            const scheme = colors[Math.floor(Math.random() * colors.length)];
 
             bubble.style.width = `${size}px`;
             bubble.style.height = `${size}px`;
             bubble.style.left = `${left}%`;
-            bubble.style.bottom = `-${size + 20}px`;
+            bubble.style.bottom = `-${size + 40}px`;
             bubble.style.animationDelay = `${delay}s`;
             bubble.style.animationDuration = `${duration}s`;
             bubble.style.setProperty('--bubble-opacity', opacity);
             bubble.style.setProperty('--wobble-offset', `${wobble}px`);
-            
-            // Apply unique gradient colors and glassmorphic box-shadow
-            bubble.style.background = `radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.6) 0%, ${colorScheme.base} 35%, rgba(0, 0, 0, 0) 70%, ${colorScheme.glow} 100%)`;
-            bubble.style.boxShadow = `0 4px 15px rgba(0, 0, 0, 0.15), inset 0 2px 5px rgba(255, 255, 255, 0.4), inset 0 -2px 5px ${colorScheme.glow}`;
-            bubble.style.borderColor = colorScheme.border;
-            
-            // Randomly blur some bubbles for luxury depth of field
-            if (Math.random() > 0.6) {
-                bubble.style.filter = `blur(${Math.random() * 2 + 1}px)`;
+
+            bubble.style.background = `radial-gradient(circle at 30% 30%, rgba(242, 236, 224, 0.5) 0%, ${scheme.base} 40%, rgba(0,0,0,0) 75%, ${scheme.glow} 100%)`;
+            bubble.style.boxShadow = `0 6px 20px rgba(0,0,0,0.2), inset 0 2px 6px rgba(242, 236, 224, 0.35), inset 0 -3px 8px ${scheme.glow}`;
+            bubble.style.borderColor = scheme.border;
+
+            if (Math.random() > 0.55) {
+                bubble.style.filter = `blur(${Math.random() * 3 + 1}px)`;
             }
-            
+
             bubblesContainer.appendChild(bubble);
         }
-    }
+    };
+    initAmbientBubbles();
 
-    // Header Scroll Effect
+    /* ==========================================
+       2. HEADER SCROLL & MOBILE NAVIGATION DRAWER
+       ========================================== */
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 100) {
+        if (window.scrollY > 50) {
             header.classList.add('scrolled');
         } else {
             header.classList.remove('scrolled');
         }
-    });
+    }, { passive: true });
 
-    // Mobile Menu Toggle (Premium Drawer Implementation)
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
-    
-    mobileBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileBtn.classList.toggle('open');
-    });
 
-    // Close mobile menu when links are clicked
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileBtn.classList.remove('open');
+    if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileBtn.classList.toggle('open');
+            // Toggle body scroll locking when mobile menu is active
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
         });
-    });
 
-    // Reviews Slider
-    const track = document.querySelector('.review-track');
-    const cards = document.querySelectorAll('.review-card');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    let index = 0;
-
-    function updateSlider() {
-        track.style.transform = `translateX(-${index * 100}%)`;
+        // Close drawer on click of links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
     }
 
-    nextBtn.addEventListener('click', () => {
-        index = (index + 1) % cards.length;
-        updateSlider();
-    });
+    /* ==========================================
+       3. INTERACTIVE HORIZONTAL SCROLL & DRAG SYSTEM (ATTRACTIONS)
+       ========================================== */
+    const attractionsGrid = document.getElementById('attractions-grid');
+    const scrollFill = document.getElementById('attractions-progress');
 
-    prevBtn.addEventListener('click', () => {
-        index = (index - 1 + cards.length) % cards.length;
-        updateSlider();
-    });
+    if (attractionsGrid && scrollFill) {
 
-    // Auto-slide reviews
-    setInterval(() => {
-        index = (index + 1) % cards.length;
-        updateSlider();
-    }, 5000);
+        // Track Scroll Progression Width
+        const updateScrollProgress = () => {
+            const maxScroll = attractionsGrid.scrollWidth - attractionsGrid.clientWidth;
+            if (maxScroll <= 0) return;
+            const percentage = (attractionsGrid.scrollLeft / maxScroll) * 100;
+            scrollFill.style.width = `${Math.max(5, Math.min(percentage, 100))}%`;
+        };
 
-    // Availability Form Handling
-    const availabilityForm = document.getElementById('availability-form');
-    if (availabilityForm) {
-        availabilityForm.addEventListener('submit', (e) => {
+        attractionsGrid.addEventListener('scroll', updateScrollProgress, { passive: true });
+        window.addEventListener('resize', updateScrollProgress, { passive: true });
+
+        // Desktop Click and Drag Scrolling
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        attractionsGrid.addEventListener('mousedown', (e) => {
+            isDown = true;
+            attractionsGrid.classList.add('active');
+            startX = e.pageX - attractionsGrid.offsetLeft;
+            scrollLeft = attractionsGrid.scrollLeft;
+        });
+
+        attractionsGrid.addEventListener('mouseleave', () => {
+            isDown = false;
+            attractionsGrid.classList.remove('active');
+        });
+
+        attractionsGrid.addEventListener('mouseup', () => {
+            isDown = false;
+            attractionsGrid.classList.remove('active');
+        });
+
+        attractionsGrid.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
             e.preventDefault();
-            
+            const x = e.pageX - attractionsGrid.offsetLeft;
+            const walk = (x - startX) * 2; // Scroll multiplier
+            attractionsGrid.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    /* ==========================================
+       4. LUXURY GALLERY LIGHTBOX SYSTEM
+       ========================================== */
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightboxModal = document.getElementById('lightbox-modal');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+    const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
+
+    let activeGalleryIndex = 0;
+    const galleryAssets = [];
+
+    // Parse assets from current DOM gallery elements
+    galleryItems.forEach((item, index) => {
+        const img = item.querySelector('img');
+        const title = item.querySelector('.gallery-info h3')?.textContent || 'Gallery View';
+        const tag = item.querySelector('.gallery-tag')?.textContent || 'Kisans Villa';
+
+        if (img) {
+            galleryAssets.push({
+                src: img.getAttribute('src') || img.src,
+                caption: `${title} — <span style="color:#C8A96A;">${tag}</span>`
+            });
+
+            // Assign dynamic attributes for mapping click triggers
+            item.setAttribute('data-gallery-idx', index);
+
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                activeGalleryIndex = index;
+                openLightbox();
+            });
+        }
+    });
+
+    const openLightbox = () => {
+        if (!lightboxModal || !lightboxImg || !lightboxCaption) return;
+
+        updateLightboxContent();
+        lightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Stop background scrolling
+    };
+
+    const closeLightbox = () => {
+        if (!lightboxModal) return;
+        lightboxModal.classList.remove('active');
+        document.body.style.overflow = '';
+    };
+
+    const updateLightboxContent = () => {
+        const asset = galleryAssets[activeGalleryIndex];
+        if (!asset || !lightboxImg || !lightboxCaption) return;
+
+        // Trigger elegant scaling reset
+        lightboxImg.style.transform = 'scale(0.95)';
+        lightboxImg.style.opacity = '0';
+
+        setTimeout(() => {
+            lightboxImg.src = asset.src;
+            lightboxCaption.innerHTML = asset.caption;
+            lightboxImg.style.transform = 'scale(1)';
+            lightboxImg.style.opacity = '1';
+        }, 150);
+    };
+
+    const navigateLightbox = (direction) => {
+        if (direction === 'next') {
+            activeGalleryIndex = (activeGalleryIndex + 1) % galleryAssets.length;
+        } else {
+            activeGalleryIndex = (activeGalleryIndex - 1 + galleryAssets.length) % galleryAssets.length;
+        }
+        updateLightboxContent();
+    };
+
+    // Lightbox triggers & events
+    if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', () => navigateLightbox('prev'));
+    if (lightboxNext) lightboxNext.addEventListener('click', () => navigateLightbox('next'));
+
+    if (lightboxModal) {
+        // Close on background click
+        lightboxModal.addEventListener('click', (e) => {
+            if (e.target === lightboxModal) closeLightbox();
+        });
+    }
+
+    // Keyboard support for gallery
+    document.addEventListener('keydown', (e) => {
+        if (!lightboxModal || !lightboxModal.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+        } else if (e.key === 'ArrowRight') {
+            navigateLightbox('next');
+        } else if (e.key === 'ArrowLeft') {
+            navigateLightbox('prev');
+        }
+    });
+
+    /* ==========================================
+       5. PREMIUM CROSS-FADE TESTIMONIALS SLIDER
+       ========================================== */
+    const reviews = document.querySelectorAll('.review-card');
+    const sliderPrev = document.querySelector('.slider-nav .prev-btn');
+    const sliderNext = document.querySelector('.slider-nav .next-btn');
+
+    if (reviews.length > 0) {
+        let currentReviewIdx = 0;
+        let sliderInterval;
+
+        const updateReviewSlide = () => {
+            reviews.forEach((card, i) => {
+                if (i === currentReviewIdx) {
+                    card.classList.add('active-slide');
+                } else {
+                    card.classList.remove('active-slide');
+                }
+            });
+        };
+
+        const nextSlide = () => {
+            currentReviewIdx = (currentReviewIdx + 1) % reviews.length;
+            updateReviewSlide();
+        };
+
+        const prevSlide = () => {
+            currentReviewIdx = (currentReviewIdx - 1 + reviews.length) % reviews.length;
+            updateReviewSlide();
+        };
+
+        const startAutoplay = () => {
+            clearInterval(sliderInterval);
+            sliderInterval = setInterval(nextSlide, 7000); // 7s autoplay duration
+        };
+
+        // Click handlers
+        if (sliderNext) {
+            sliderNext.addEventListener('click', () => {
+                nextSlide();
+                startAutoplay(); // Reset timer on click
+            });
+        }
+        if (sliderPrev) {
+            sliderPrev.addEventListener('click', () => {
+                prevSlide();
+                startAutoplay(); // Reset timer on click
+            });
+        }
+
+        // Initialize state & timing
+        updateReviewSlide();
+        startAutoplay();
+    }
+
+    /* ==========================================
+       6. LUXURY RESERVATION & WHATSAPP URL COMPILER
+       ========================================== */
+    const bookingForm = document.getElementById('availability-form');
+    if (bookingForm) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
             const checkIn = document.getElementById('check-in').value;
             const checkOut = document.getElementById('check-out').value;
             const guests = document.getElementById('guests').value;
-            
-            // Construct WhatsApp message
-            const message = `Hello Kisans Villa! I'd like to check availability for:\n\nCheck-in: ${checkIn}\nCheck-out: ${checkOut}\nGuests: ${guests}\n\nIs the villa available?`;
-            const whatsappUrl = `https://wa.me/919846294858?text=${encodeURIComponent(message)}`;
-            
-            // Open WhatsApp
-            window.open(whatsappUrl, '_blank');
+            const duration = document.getElementById('duration').value;
+
+            // Format dynamic dates beautifully
+            const formatDate = (dateStr) => {
+                if (!dateStr) return 'Not Selected';
+                const date = new Date(dateStr);
+                return date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+            };
+
+            // Luxury editorial WhatsApp Message compiler
+            const luxuryMessage = `Hello Kisans Villa Homestay! ✨\n\nI would love to check reservation availability for a luxury escape:\n\n📅 Arrival: ${formatDate(checkIn)}\n📅 Departure: ${formatDate(checkOut)}\n🌙 Duration: ${duration}\n👥 Party Size: ${guests} Guest(s)\n\nCould you please confirm reservation openings and offer package options? Thank you.`;
+
+            const whatsappBaseUrl = 'https://wa.me/919846294858';
+            const finalReservationUrl = `${whatsappBaseUrl}?text=${encodeURIComponent(luxuryMessage)}`;
+
+            window.open(finalReservationUrl, '_blank');
         });
     }
 
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px"
+    /* ==========================================
+       7. HARDWARE-ACCELERATED SCROLL REVEALS
+       ========================================== */
+    const revealElements = document.querySelectorAll('.scroll-reveal');
+    if (revealElements.length > 0) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                    revealObserver.unobserve(entry.target); // Trigger exactly once
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -60px 0px'
+        });
+
+        revealElements.forEach(elem => revealObserver.observe(elem));
+    }
+
+    /* ==========================================
+       8. PERFORMANCE OPTIMIZED SCROLL PARALLAX
+       ========================================== */
+    let lastKnownScrollPosition = 0;
+    let ticking = false;
+
+    const executeParallaxEffects = (scrollPos) => {
+        // Hero Parallax effect
+        const heroBg = document.querySelector('.hero-bg');
+        if (heroBg) {
+            heroBg.style.transform = `translateY(${scrollPos * 0.22}px) scale(${1.08 + (scrollPos * 0.0001)})`;
+        }
+
+        // About Layout Parallax offset
+        const aboutWrapper = document.querySelector('.about-image .img-wrapper img');
+        if (aboutWrapper) {
+            const aboutSection = document.querySelector('.about');
+            if (aboutSection) {
+                const sectionRect = aboutSection.getBoundingClientRect();
+                const windowHeight = window.innerHeight;
+
+                // Only calculate if visible
+                if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+                    const offset = (windowHeight - sectionRect.top) * 0.08;
+                    aboutWrapper.style.transform = `translateY(${offset}px)`;
+                }
+            }
+        }
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('animate-in');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.scroll-reveal').forEach(element => {
-        observer.observe(element);
-    });
-
-    // Parallax Effect
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const heroImg = document.getElementById('hero-img');
-        const aboutImg = document.getElementById('about-img');
+        lastKnownScrollPosition = window.scrollY;
 
-        if (heroImg) {
-            heroImg.style.transform = `translateY(${scrolled * 0.4}px) scale(1.1)`;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                executeParallaxEffects(lastKnownScrollPosition);
+                ticking = false;
+            });
+            ticking = true;
         }
-        
-        if (aboutImg && scrolled > 300) {
-            // Simple parallax for about image based on scroll
-            const offset = (scrolled - 300) * 0.15;
-            aboutImg.style.transform = `translateY(${offset}px)`;
-        }
-    });
+    }, { passive: true });
+
 });
