@@ -6,6 +6,65 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ==========================================
+       HERO ROTATING WORD (baseline-safe)
+       ========================================== */
+    const initHeroRotatingWord = () => {
+        const wrappers = document.querySelectorAll('.hero-rotating-word[data-words]');
+        if (!wrappers.length) return;
+
+        const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        wrappers.forEach((wrapper) => {
+            const words = (wrapper.dataset.words || '')
+                .split(',')
+                .map(w => w.trim())
+                .filter(Boolean);
+
+            if (words.length < 2) return;
+
+            const currentText = wrapper.textContent.trim();
+            let index = words.indexOf(currentText);
+            if (index < 0) index = 0;
+
+            // Lock width by maximum letter count ("same letters" feel).
+            const maxLen = words.reduce((m, w) => Math.max(m, w.length), 0);
+            wrapper.style.setProperty('--rot-min-width', `${maxLen}ch`);
+            wrapper.textContent = words[index];
+
+            const intervalMs = 2000;
+            const animMs = 420;
+            let isAnimating = false;
+
+            window.setInterval(() => {
+                index = (index + 1) % words.length;
+
+                if (prefersReducedMotion) {
+                    wrapper.textContent = words[index];
+                    return;
+                }
+
+                if (isAnimating) return;
+                isAnimating = true;
+
+                wrapper.classList.remove('rot-enter');
+                wrapper.classList.add('rot-exit');
+
+                window.setTimeout(() => {
+                    wrapper.classList.remove('rot-exit');
+                    wrapper.textContent = words[index];
+                    wrapper.classList.add('rot-enter');
+
+                    window.setTimeout(() => {
+                        wrapper.classList.remove('rot-enter');
+                        isAnimating = false;
+                    }, animMs + 30);
+                }, animMs + 30);
+            }, intervalMs);
+        });
+    };
+    initHeroRotatingWord();
+
+    /* ==========================================
        1. AMBIENT BACKGROUND GLOW BUBBLES
        ========================================== */
     const initAmbientBubbles = () => {
