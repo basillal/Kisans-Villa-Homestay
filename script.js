@@ -101,9 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const size = Math.random() * 65 + 20; // 20px to 85px
             const left = Math.random() * 100;
-            const delay = Math.random() * 10;
             const duration = Math.random() * 20 + 12; // 12s to 32s
-            const opacity = Math.random() * 0.14 + 0.04;
+            // Start at a mid-animation progress so bubbles are visible immediately.
+            // (If progress is too close to 0, bubbles begin below the viewport.)
+            const progress = 0.08 + Math.random() * 0.52; // 8%..60%
+            const delay = progress * duration;
+            const opacity = Math.random() * 0.12 + 0.08;
             const wobble = Math.random() * 80 - 40; // -40px to 40px lateral sway
 
             const scheme = colors[Math.floor(Math.random() * colors.length)];
@@ -112,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bubble.style.height = `${size}px`;
             bubble.style.left = `${left}%`;
             bubble.style.bottom = `-${size + 40}px`;
-            bubble.style.animationDelay = `${delay}s`;
+            bubble.style.animationDelay = `-${delay}s`;
             bubble.style.animationDuration = `${duration}s`;
             bubble.style.setProperty('--bubble-opacity', opacity);
             bubble.style.setProperty('--wobble-offset', `${wobble}px`);
