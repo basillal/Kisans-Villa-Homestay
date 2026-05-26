@@ -235,37 +235,74 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        // Desktop Click and Drag Scrolling
+        // Pointer / Touch drag scrolling (desktop + mobile)
         let isDown = false;
-        let startX;
-        let scrollLeft;
+        let startX = 0;
+        let scrollLeft = 0;
 
-        attractionsGrid.addEventListener('mousedown', (e) => {
+        const pointerDown = (pageX) => {
             isDown = true;
             stopAutoScroll();
             attractionsGrid.classList.add('active');
-            startX = e.pageX - attractionsGrid.offsetLeft;
+            startX = pageX - attractionsGrid.getBoundingClientRect().left;
             scrollLeft = attractionsGrid.scrollLeft;
-        });
+        };
 
-        attractionsGrid.addEventListener('mouseleave', () => {
-            isDown = false;
-            attractionsGrid.classList.remove('active');
-        });
+        const pointerMove = (pageX, prevent) => {
+            if (!isDown) return;
+            if (prevent) prevent.preventDefault();
+            const x = pageX - attractionsGrid.getBoundingClientRect().left;
+            const walk = (x - startX) * 2; // multiplier gives a nicer drag feel
+            attractionsGrid.scrollLeft = scrollLeft - walk;
+            updateScrollProgress();
+        };
 
-        attractionsGrid.addEventListener('mouseup', () => {
+        const pointerUp = () => {
             isDown = false;
             attractionsGrid.classList.remove('active');
             setTimeout(startAutoScroll, 2000);
-        });
+        };
 
-        attractionsGrid.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - attractionsGrid.offsetLeft;
-            const walk = (x - startX) * 2;
-            attractionsGrid.scrollLeft = scrollLeft - walk;
-        });
+        // Mouse events
+        attractionsGrid.addEventListener('mousedown', (e) => pointerDown(e.pageX));
+        window.addEventListener('mouseup', pointerUp);
+        window.addEventListener('mousemove', (e) => pointerMove(e.pageX, e));
+
+        // Touch: prefer native scrolling on mobile. Stop auto-scroll while user interacts, resume after idle.
+        let userResumeTimer = null;
+        const scheduleResume = (delay = 3000) => {
+            clearTimeout(userResumeTimer);
+            userResumeTimer = setTimeout(() => {
+                startAutoScroll();
+            }, delay);
+        };
+
+        attractionsGrid.addEventListener('touchstart', () => {
+            stopAutoScroll();
+            // let the browser handle the touch scrolling natively
+            clearTimeout(userResumeTimer);
+        }, { passive: true });
+
+        attractionsGrid.addEventListener('touchmove', () => {
+            // update progress while user scrolls
+            updateScrollProgress();
+            clearTimeout(userResumeTimer);
+            scheduleResume(2500);
+        }, { passive: true });
+
+        attractionsGrid.addEventListener('touchend', () => {
+            scheduleResume(2000);
+        }, { passive: true });
+
+        // Wheel / mouse wheel should also pause auto-scroll briefly
+        attractionsGrid.addEventListener('wheel', (e) => {
+            stopAutoScroll();
+            clearTimeout(userResumeTimer);
+            scheduleResume(2000);
+        }, { passive: true });
+
+        // Ensure progress is correct on init
+        updateScrollProgress();
     }
 
     /* ==========================================

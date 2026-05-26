@@ -1114,8 +1114,8 @@ p strong {
 .slider-arrow {
     position: absolute;
     top: 50%;
-    transform: translateY(-60%);
-    z-index: 10;
+    transform: translateY(-50%);
+    z-index: 9999;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -1152,6 +1152,49 @@ p strong {
     color: #fff;
     border-color: var(--accent-gold);
     box-shadow: var(--gold-glow);
+}
+
+/* Make slider arrows usable on small screens (touch devices) */
+@media (max-width: 900px) {
+    .slider-arrow {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        width: 56px;
+        height: 56px;
+        top: 50%;
+    }
+
+    .slider-arrow-left {
+        left: 8px;
+    }
+
+    .slider-arrow-right {
+        right: 8px;
+    }
+
+    .attractions-grid {
+        gap: 18px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .slider-arrow {
+        width: 64px !important;
+        height: 64px !important;
+        border-width: 1px !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+
+    .slider-arrow i {
+        font-size: 1.1rem;
+    }
+
+    /* Ensure arrows are not visually clipped by parent containers */
+    .attractions-slider-container {
+        overflow: visible;
+    }
 }
 
 
