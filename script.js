@@ -472,7 +472,20 @@ document.addEventListener('DOMContentLoaded', () => {
             const checkIn = document.getElementById('check-in').value;
             const checkOut = document.getElementById('check-out').value;
             const guests = document.getElementById('guests').value;
-            const duration = document.getElementById('duration').value;
+
+            const getDurationText = (startDate, endDate) => {
+                if (!startDate || !endDate) return 'Not selected';
+                const start = new Date(startDate);
+                const end = new Date(endDate);
+                const diffMs = end - start;
+
+                if (Number.isNaN(diffMs) || diffMs <= 0) return 'To be confirmed';
+
+                const nights = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+                return `${nights} night${nights > 1 ? 's' : ''}`;
+            };
+
+            const duration = getDurationText(checkIn, checkOut);
 
             // Format dynamic dates beautifully
             const formatDate = (dateStr) => {
