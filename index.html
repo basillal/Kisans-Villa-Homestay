@@ -24,20 +24,20 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Outfit:wght@100..900&display=swap"
         rel="stylesheet">
-
+    <link rel="icon" href="assets/kisans-villa-fav.svg">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=1">
 </head>
 
 <body>
 
-    <!-- Header / Navigation -->
+    <!-- Header / Navigation --> 
     <header id="main-header">
         <nav class="container">
             <div class="logo">
-                <span class="logo-text">Kisans <span>Villa</span></span>
+                <span class="logo-text"> <span>Kisans Villa</span></span>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
@@ -45,10 +45,10 @@
                 <li><a href="#amenities">Amenities</a></li>
                 <li><a href="#attractions">Nearby</a></li>
                 <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#reviews">Review</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <a href="https://wa.me/919846294858" class="btn btn-primary nav-cta">Book Now</a>
+            <a href="https://wa.me/919846294858" class="btn btn-gold nav-cta">Book Now</a>
             <div class="mobile-menu-btn">
                 <span></span>
                 <span></span>
@@ -60,7 +60,6 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <!-- Premium abstract deep-jungle velvet gradient background -->
             <div class="bubbles-container"></div>
             <div class="overlay"></div>
         </div>
@@ -70,7 +69,9 @@
                         class="fas fa-star"></i><i class="fas fa-star"></i></span>
                 <span class="badge-text">5.0 Rated Luxury Homestay</span>
             </div>
-            <h1 class="reveal-text">A Luxury Family <span class="italic-serif">Sanctuary</span> in Wayanad</h1>
+            <h1 class="reveal-text">A <span class="hero-rotating-word"
+                    data-words="Luxury,Deluxe,Homely,Nature,Haveny,Hidden">Luxury</span>&thinsp;Family <span
+                    class="italic-serif">Sanctuary</span> in Wayanad</h1>
             <p class="reveal-text-sub">Escape to a serene sanctuary in Varadimoola, Mananthavady. Experience the soulful
                 charm of Wayanad in our premium, fully-catered private villa surrounded by lush tropical nature.</p>
             <div class="hero-btns reveal-btns">
@@ -80,8 +81,8 @@
 
             <div class="hero-stats reveal-stats">
                 <div class="stat-card">
-                    <span class="stat-number">4</span>
-                    <span class="stat-text">Premium Bedrooms</span>
+                    <span class="stat-number">3</span>
+                    <span class="stat-text">Premium Rooms</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">5.0 ★</span>
@@ -102,25 +103,22 @@
     <!-- About Section -->
     <section id="about" class="about section-padding">
         <div class="container grid">
-            <div class="about-image parallax-img">
-                <div class="img-wrapper">
-                    <img src="assets/about-image.jpg" alt="Tranquil Wayanad Landscape" id="about-img">
-                    <div class="img-accent float-anim"></div>
-                </div>
-            </div>
             <div class="about-text scroll-reveal">
                 <span class="section-subtitle">Who We Are</span>
-                <h2 class="section-title">A Sanctuary for Families & Friends</h2>
-                <p>Nestled in the lush greenery of **Varadimoola surroundings**, Kisans Villa Homestay offers a unique
-                    blend of modern luxury and traditional Kerala hospitality. Whether you're planning a family reunion
-                    or a getaway with friends, our villa provides the privacy and tranquility you seek.</p>
-                <p>Located **near Mananthavady town**, yet far enough to feel the peace of nature, we are ideally
-                    positioned for you to explore the best of Wayanad.</p>
+                <h2 class="section-title">A <span class="italic-serif">Sanctuary</span> for Families & Friends</h2>
+                <p><strong>Kisans Villa Homestay</strong> sits in the quiet green village of <strong>Varadimoola,
+                        Mananthavady</strong>.
+                    It is a cozy<strong> private villa </strong>where families and friends can relax, enjoy good food,
+                    and feel at home
+                    in nature.</p>
+                <p>We are just a short drive from <strong> Mananthavady</strong> town, but calm and peaceful enough to
+                    truly unwind. It is the perfect base to explore the beauty of <span
+                        class="italic-serif">Wayanad</span>.</p>
 
                 <div class="ideal-for">
                     <h3>Ideal For:</h3>
                     <div class="tags">
-                        <span class="tag"><i class="fas fa-users"></i> Families</span>
+                        <span class="tag"><i class="fas fa-users"></i>Families</span>
                         <span class="tag"><i class="fas fa-user-friends"></i> Groups</span>
                         <span class="tag"><i class="fas fa-heart"></i> Couples</span>
                         <span class="tag"><i class="fas fa-laptop-house"></i> Workations</span>
@@ -138,6 +136,13 @@
                     </div>
                 </div>
             </div>
+            <div class="about-image parallax-img scroll-reveal">
+                <div class="img-wrapper">
+                    <img src="assets/kisans vila side view.jpeg" alt="Tranquil Wayanad Landscape" id="about-img"
+                        loading="lazy">
+                    <div class="img-accent float-anim"></div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -145,37 +150,39 @@
     <section id="amenities" class="amenities section-padding bg-light">
         <div class="container text-center">
             <span class="section-subtitle">Comfort & Convenience</span>
-            <h2 class="section-title scroll-reveal">Everything You Need for a Perfect Stay</h2>
+            <h2 class="section-title scroll-reveal">Everything You Need for a <span class="italic-serif">Perfect
+                    Stay</span></h2>
             <div class="amenities-grid">
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.1s">
                     <div class="icon-box"><i class="fas fa-bed"></i></div>
-                    <h3>4 Bedrooms</h3>
-                    <p>Includes 2 spacious rooms with attached bathrooms.</p>
+                    <h3>3 Premium Rooms</h3>
+                    <p>Comfortable rooms with queen beds. Extra bed available on request.</p>
                 </div>
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.2s">
                     <div class="icon-box"><i class="fas fa-utensils"></i></div>
                     <h3>Equipped Kitchen</h3>
-                    <p>Fully functional kitchen for your culinary needs.</p>
+                    <p>Fully functional kitchen where cooking is allowed, complete with all essential items.</p>
                 </div>
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.3s">
-                    <div class="icon-box"><i class="fas fa-couch"></i></div>
-                    <h3>Spacious Hall</h3>
-                    <p>Designed for gatherings and relaxation.</p>
+                    <div class="icon-box"><i class="fas fa-bowl-food"></i></div>
+                    <h3>Food Provided</h3>
+                    <p>Enjoy authentic <strong>South Indian style</strong> home-cooked meals — both vegetarian and
+                        non-vegetarian — served fresh upon request.</p>
                 </div>
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.4s">
-                    <div class="icon-box"><i class="fas fa-wifi"></i></div>
-                    <h3>Free Wi-Fi</h3>
-                    <p>Stay connected with high-speed internet.</p>
+                    <div class="icon-box"><i class="fas fa-tv"></i></div>
+                    <h3>AC & Entertainment</h3>
+                    <p>Relax with Air Conditioning (1 unit) and Television (1 unit) available in the homestay.</p>
                 </div>
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.5s">
-                    <div class="icon-box"><i class="fas fa-bowl-food"></i></div>
-                    <h3>Kerala Meals</h3>
-                    <p>Authentic, home-cooked local delicacies.</p>
+                    <div class="icon-box"><i class="fas fa-car"></i></div>
+                    <h3>Wi-Fi & Parking</h3>
+                    <p>Stay connected with free Wi-Fi and enjoy secure on-site parking for your vehicles.</p>
                 </div>
                 <div class="amenity-card scroll-reveal" style="transition-delay: 0.6s">
-                    <div class="icon-box"><i class="fas fa-wind"></i></div>
-                    <h3>Sit-out Area</h3>
-                    <p>Designed for optimal air circulation and views.</p>
+                    <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+                    <h3>24/7 Service & Security</h3>
+                    <p>Round-the-clock service, housekeeping, and top-notch security for a worry-free stay.</p>
                 </div>
             </div>
         </div>
@@ -186,87 +193,116 @@
         <div class="container">
             <div class="text-center">
                 <span class="section-subtitle">Discover Wayanad</span>
-                <h2 class="section-title">Explore Nearby Wonders</h2>
+                <h2 class="section-title">Explore Nearby <span class="italic-serif">Wonders</span></h2>
             </div>
-            <div class="attractions-grid">
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="assets/attraction-pazhassi.png" alt="Pazhassi Raja Tomb">
-                        <span class="distance">3 KM</span>
+
+            <div class="attractions-slider-container">
+                <button class="slider-arrow slider-arrow-left" id="attractions-prev" aria-label="Previous">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="slider-arrow slider-arrow-right" id="attractions-next" aria-label="Next">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <div class="attractions-grid" id="attractions-track">
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/pazhassi-Raja-Tomb-Wayanad-1.webp" alt="Pazhassi Raja Tomb" loading="lazy">
+                            <span class="distance">3 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Pazhassi Raja Tomb</h3>
+                            <p>A historical monument and museum dedicated to the legendary "Lion of Kerala."</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Pazhassi+Raja+Tomb+Mananthavady"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
                     </div>
-                    <div class="attraction-info">
-                        <h3>Pazhassi Raja Tomb</h3>
-                        <p>A historical monument and museum dedicated to the legendary "Lion of Kerala."</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Pazhassi+Raja+Tomb+Mananthavady"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/Valliyoorkavu Temple.webp" alt="Valliyoorkavu Temple" loading="lazy">
+                            <span class="distance">5 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Valliyoorkavu Temple</h3>
+                            <p>A historic 14th-century temple renowned for its grand annual festival and architecture.
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Valliyoorkavu+Temple+Mananthavady"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/Kuruvadweep Island.webp" alt="Kuruvadweep" loading="lazy">
+                            <span class="distance">17 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Kuruvadweep Island</h3>
+                            <p>A pristine river delta on the Kabini River, ideal for bamboo rafting and nature walks.
+                            </p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Kuruvadweep+Island+Wayanad"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/Banasura-Sagar-Dam-Wayanad.webp" alt="Banasura Sagar Dam" loading="lazy">
+                            <span class="distance">24 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Banasura Sagar Dam</h3>
+                            <p>The largest earthen dam in India, offering breathtaking views and speed boating.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Banasura+Sagar+Dam+Wayanad"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/tholpetty-wildlife-sanctuary.webp" alt="Tholpetty Wildlife Sanctuary"
+                                loading="lazy">
+                            <span class="distance">27 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Tholpetty Wildlife</h3>
+                            <p>Experience a thrilling jungle safari and spot elephants and tigers in the wild.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Tholpetty+Wildlife+Sanctuary"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
+                    </div>
+                    <div class="attraction-card">
+                        <div class="attraction-img">
+                            <img src="assets/mananthvady-town.webp" alt="Mananthavady Town" loading="lazy">
+                            <span class="distance">2.5 KM</span>
+                            <div class="map-hover-cta">
+                                <span>View on Map <i class="fas fa-location-arrow"></i></span>
+                            </div>
+                        </div>
+                        <div class="attraction-info">
+                            <h3>Mananthavady Town</h3>
+                            <p>Close proximity to the main town for shopping, local cuisine, and transit.</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=Mananthavady+Town+Kerala"
+                                target="_blank" class="attraction-link">Get Directions</a>
+                        </div>
                     </div>
                 </div>
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="assets/attraction-temple.png" alt="Valliyoorkavu Temple">
-                        <span class="distance">5 KM</span>
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Valliyoorkavu Temple</h3>
-                        <p>A historic 14th-century temple renowned for its grand annual festival and architecture.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Valliyoorkavu+Temple+Mananthavady"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="assets/attraction-kuruvadweep.png" alt="Kuruvadweep">
-                        <span class="distance">17 KM</span>
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Kuruvadweep Island</h3>
-                        <p>A pristine river delta on the Kabini River, ideal for bamboo rafting and nature walks.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Kuruvadweep+Island+Wayanad"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="assets/attraction-banasura.png" alt="Banasura Sagar Dam">
-                        <span class="distance">24 KM</span>
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Banasura Sagar Dam</h3>
-                        <p>The largest earthen dam in India, offering breathtaking views and speed boating.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Banasura+Sagar+Dam+Wayanad"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="https://images.unsplash.com/photo-1590424768414-04663a7f805a?auto=format&fit=crop&q=80&w=800"
-                            alt="Tholpetty Wildlife Sanctuary">
-                        <span class="distance">27 KM</span>
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Tholpetty Wildlife</h3>
-                        <p>Experience a thrilling jungle safari and spot elephants and tigers in the wild.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Tholpetty+Wildlife+Sanctuary"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="attraction-card">
-                    <div class="attraction-img">
-                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc18e527?auto=format&fit=crop&q=80&w=800"
-                            alt="Mananthavady Town">
-                        <span class="distance">2.5 KM</span>
-                    </div>
-                    <div class="attraction-info">
-                        <h3>Mananthavady Town</h3>
-                        <p>Close proximity to the main town for shopping, local cuisine, and transit.</p>
-                        <a href="https://www.google.com/maps/search/?api=1&query=Mananthavady+Town+Kerala"
-                            target="_blank" class="attraction-link">Get Directions <i
-                                class="fas fa-arrow-right"></i></a>
+
+                <!-- Editorial Luxury Scroll Bar indicator -->
+                <div class="scroll-track-wrapper">
+                    <div class="scroll-bar-indicator">
+                        <div class="scroll-bar-fill" id="attractions-progress"></div>
                     </div>
                 </div>
             </div>
@@ -279,24 +315,50 @@
             <div class="section-header grid">
                 <div>
                     <span class="section-subtitle">Visual Tour</span>
-                    <h2 class="section-title">Glimpses of Your Retreat</h2>
+                    <h2 class="section-title">Glimpses of Your <span class="italic-serif">Retreat</span></h2>
                 </div>
                 <div class="header-action">
                     <p>Every corner of Kisans Villa is designed to offer comfort and aesthetic pleasure.</p>
                 </div>
             </div>
+
             <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <img src="assets/gallery-1.jpg" alt="Villa Living Hall" id="gallery-img-1">
+                <div class="gallery-item large" data-index="0">
+                    <img src="assets/kisan-villa-front-view.jpeg" alt="Villa Front view" id="gallery-img-1"
+                        loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-tag">01 / LOBBY</span>
+                            <h3>Villa Front View</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery-2.jpg" alt="Master Bedroom" id="gallery-img-2">
+                <div class="gallery-item" data-index="1">
+                    <img src="assets/Kisans Villa Logo.png" alt="Master Bedroom" id="gallery-img-2" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-tag">02 / BEDROOM</span>
+                            <h3>Kisan Villa Logo</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item">
-                    <img src="assets/gallery-3.jpg" alt="Sit-out Area" id="gallery-img-3">
+                <div class="gallery-item" data-index="2">
+                    <img src="assets/Kisans Villa Images 2.png" alt="Sit-out Area" id="gallery-img-3" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-tag">03 / SITOUT</span>
+                            <h3>Sit-out Area</h3>
+                        </div>
+                    </div>
                 </div>
-                <div class="gallery-item wide">
-                    <img src="assets/gallery-4.jpg" alt="Dining Area" id="gallery-img-4">
+                <div class="gallery-item wide" data-index="3">
+                    <img src="assets/kisan-villa-flat-view.png" alt="Dining Area" id="gallery-img-4" loading="lazy">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <span class="gallery-tag">04 / DINING</span>
+                            <h3>Night View</h3>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -307,42 +369,60 @@
         <div class="container grid">
             <div class="tours-text scroll-reveal">
                 <span class="section-subtitle">Beyond the Stay</span>
-                <h2 class="section-title">Experiences & Tours by Khaleej Tours</h2>
+                <h2 class="section-title"><span class="italic-serif">Experiences & Tours</span> by Khaleej Tours</h2>
                 <p>We are one among the leading Tourist promoters based in Kerala. Due to our specialities in this field
                     we could achieve this Status within a short span, of course under the leadership of our dynamic and
-                    efficient CEO Mr. Babu. He started his career with a passion for showcasing the beauty of Wayanad
+                    efficient CEO <strong>Mr. Babu</strong>. He started his career with a passion for showcasing the
+                    beauty of Wayanad
                     and Kerala to the world.</p>
-                <p>Through our sister company, <strong>Khaleej Tours</strong>, we provide complete travel and tourism
+                <p>Through our parent company, <strong>Khaleej Tours</strong>, we provide complete travel and tourism
                     packages to make your vacation unforgettable. Let us handle your itinerary while you relax.</p>
-
-                <div class="tours-features">
-                    <div class="feat-item hover-lift">
-                        <i class="fas fa-fire"></i>
-                        <span>Campfire Nights</span>
-                    </div>
-                    <div class="feat-item hover-lift">
-                        <i class="fas fa-truck-pickup"></i>
-                        <span>Jeep Safari</span>
-                    </div>
-                    <div class="feat-item hover-lift">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <span>Local Sightseeing</span>
-                    </div>
-                    <div class="feat-item hover-lift">
-                        <i class="fas fa-car-side"></i>
-                        <span>Pick & Drop Services</span>
-                    </div>
-                </div>
 
                 <a href="https://khaleejtours.com/" target="_blank" class="btn btn-primary btn-glow"
                     style="margin-top: 30px;">Visit Khaleej Tours <i class="fas fa-external-link-alt"
                         style="margin-left: 8px; font-size: 0.85em;"></i></a>
             </div>
-            <div class="tours-image parallax-img scroll-reveal" style="transition-delay: 0.2s">
-                <div class="img-wrapper">
-                    <img src="assets/tours.jpg" alt="Wayanad Tourism with Khaleej Tours" id="tours-img">
-                    <div class="img-accent float-anim"
-                        style="top: -20px; left: -20px; right: auto; bottom: auto; background-color: var(--primary-color);">
+
+            <div class="experiences-grid scroll-reveal">
+                <div class="experience-card">
+                    <img src="assets/wayanad.webp" alt="Wayanad Day Tours" class="experience-bg" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <span class="experience-badge">Day Tours</span>
+                        <h3>Wayanad Day Tours</h3>
+                        <p class="experience-reveal-text">Curated half-day and full-day sightseeing tours covering
+                            waterfalls, viewpoints, plantations, and local highlights.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="assets/kerala.webp" alt="Kerala Tour Packages" class="experience-bg" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <span class="experience-badge">Packages</span>
+                        <h3>Kerala Tour Packages</h3>
+                        <p class="experience-reveal-text">Complete travel packages including transport, stays, and
+                            experiences—planned around your pace and preferences.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="assets/itineary.jpeg" alt="Itinerary Planning" class="experience-bg" loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <span class="experience-badge">Travel Desk</span>
+                        <h3>Itinerary Planning</h3>
+                        <p class="experience-reveal-text">Personalized trip planning with local insights—routes,
+                            timings, and must-visit spots arranged for a smooth vacation.</p>
+                    </div>
+                </div>
+                <div class="experience-card">
+                    <img src="assets/force-urbania-500x500.webp" alt="Pick & Drop Services" class="experience-bg"
+                        loading="lazy">
+                    <div class="experience-overlay"></div>
+                    <div class="experience-content">
+                        <span class="experience-badge">Luxury Care</span>
+                        <h3>Pick & Drop Services</h3>
+                        <p class="experience-reveal-text">Enjoy absolute peace of mind with our fully chauffeured
+                            transit transfers from airports and stations.</p>
                     </div>
                 </div>
             </div>
@@ -352,8 +432,8 @@
     <!-- Booking Section -->
     <section id="booking" class="booking section-padding bg-dark text-white">
         <div class="container grid">
-            <div class="booking-info">
-                <h2 class="section-title">Plan Your Escape</h2>
+            <div class="booking-info scroll-reveal">
+                <h2 class="section-title">Plan Your <span class="italic-serif">Escape</span></h2>
                 <p>Ready to experience the tranquility of Wayanad? Check our availability and secure your dates today.
                 </p>
                 <div class="booking-perks">
@@ -362,11 +442,14 @@
                     <div class="perk"><i class="fas fa-check-circle"></i> Flexible Check-in</div>
                 </div>
                 <div class="timing">
-                    <p><strong>Check-in:</strong> 12:00 PM</p>
-                    <p><strong>Check-out:</strong> 11:00 AM</p>
+                    <p><strong>Check-in:</strong> 12:00 PM (Early check-in available)</p>
+                    <p><strong>Check-out:</strong> 11:00 AM (Late check-out available)</p>
+                    <p><strong>ID Requirement:</strong> Valid Govt ID Proof required</p>
+                    <p><strong>House Rules:</strong> Couple friendly. Pets are not allowed.</p>
                 </div>
             </div>
-            <div class="booking-card">
+
+            <div class="booking-card scroll-reveal">
                 <form id="availability-form">
                     <div class="form-group">
                         <label for="check-in">Check-in Date</label>
@@ -386,8 +469,11 @@
                             <option value="5">5+ Guests</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">Check Availability</button>
-                    <p class="form-footer">Or book directly via <a href="https://wa.me/919846294858">WhatsApp</a></p>
+                    <button type="submit" class="btn btn-primary btn-block whatsapp-btn">
+                        Check Availability <i class="fab fa-whatsapp"></i>
+                    </button>
+                    <p class="form-footer">Ask about our special discounts! Or book directly via <a
+                            href="https://wa.me/919846294858">WhatsApp</a></p>
                 </form>
             </div>
         </div>
@@ -397,26 +483,28 @@
     <section id="reviews" class="reviews section-padding">
         <div class="container text-center">
             <span class="section-subtitle">Testimonials</span>
-            <h2 class="section-title">What Our Guests Say</h2>
+            <h2 class="section-title">What Our Guests <span class="italic-serif">Say</span></h2>
+
             <div class="google-rating-summary">
                 <div class="google-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
                 </div>
                 <div class="rating-details">
                     <span class="rating-value">5.0</span>
-                    <div class="stars">
+                    <div class="stars animated-stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
                     </div>
-                    <span class="rating-count">Based on 120+ Excellent Reviews</span>
+                    <span class="rating-count">Based on Excellent Reviews</span>
                 </div>
             </div>
+
             <div class="reviews-slider">
                 <div class="review-track">
-                    <div class="review-card">
+                    <div class="review-card active-slide">
                         <div class="stars">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -446,11 +534,10 @@
                             <span class="guest-origin">Kochi</span>
                         </div>
                     </div>
-                    <!-- More reviews can be added here -->
                 </div>
                 <div class="slider-nav">
-                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
-                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    <button class="prev-btn" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
                 </div>
             </div>
         </div>
@@ -461,44 +548,38 @@
         <div class="container">
             <div class="text-center" style="margin-bottom: 50px;">
                 <span class="section-subtitle">Get in Touch</span>
-                <h2 class="section-title">We'd Love to Hear from You</h2>
+                <h2 class="section-title">We'd Love to <span class="italic-serif">Hear</span> from You</h2>
                 <p style="color: var(--text-light); max-width: 600px; margin: 0 auto;">We are always here to help you
                     plan your perfect stay in Wayanad. Please don't hesitate to contact us.</p>
             </div>
+
             <div class="grid contact-grid" style="gap: 50px; align-items: start;">
-                <div class="map-wrapper">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Kisans%20Villa%20Homestay,%20Mananthavady&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="450"
-                        style="border:0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
                 <div class="contact-details" style="padding-top: 20px;">
                     <div class="contact-list">
-                        <div class="contact-item">
-                            <div class="icon-box"
-                                style="background: transparent; color: var(--primary-color); width: 40px; height: 40px; font-size: 1.2rem;">
-                                <i class="fas fa-location-dot"></i></div>
+                        <div class="contact-item scroll-reveal">
+                            <div class="icon-box">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
                             <div>
                                 <h3>How to Find Us</h3>
                                 <p style="color: var(--text-light); line-height: 1.8;">Kisans Villa
                                     Homestay<br>Varadimoola, Mananthavady<br>Wayanad, Kerala 670645</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="icon-box"
-                                style="background: transparent; color: var(--primary-color); width: 40px; height: 40px; font-size: 1.2rem;">
-                                <i class="fas fa-clock"></i></div>
+                        <div class="contact-item scroll-reveal" style="transition-delay: 0.1s">
+                            <div class="icon-box">
+                                <i class="fas fa-clock"></i>
+                            </div>
                             <div>
                                 <h3>When to Visit</h3>
                                 <p style="color: var(--text-light); line-height: 1.8;">Check-in: 12:00 PM<br>Check-out:
                                     11:00 AM<br>Available 24/7 for support</p>
                             </div>
                         </div>
-                        <div class="contact-item">
-                            <div class="icon-box"
-                                style="background: transparent; color: var(--primary-color); width: 40px; height: 40px; font-size: 1.2rem;">
-                                <i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-item scroll-reveal" style="transition-delay: 0.2s">
+                            <div class="icon-box">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
                             <div>
                                 <h3>How to Get in Touch</h3>
                                 <p style="color: var(--text-light); line-height: 1.8;">Phone: +91 98462 94858<br>Email:
@@ -506,17 +587,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="social-links" style="margin-left: 60px;">
-                        <a href="#" aria-label="Facebook"
-                            style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.05);"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#" aria-label="Instagram"
-                            style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.05);"><i
-                                class="fab fa-instagram"></i></a>
+
+                    <div class="social-links scroll-reveal" style="margin-left: 60px; transition-delay: 0.3s">
+                        <a href="#" aria-label="Facebook" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
                         <a href="https://maps.app.goo.gl/vbKAJJSENkekvc7W7" target="_blank"
-                            class="btn btn-outline small"
-                            style="color: var(--primary-color); border-color: var(--primary-color);">Get Directions</a>
+                            class="btn btn-outline small">Get Directions</a>
                     </div>
+                </div>
+
+                <div class="map-wrapper scroll-reveal" style="transition-delay: 0.2s">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Kisans%20Villa%20Homestay,%20Mananthavady&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -526,7 +610,7 @@
     <footer>
         <div class="container grid footer-grid">
             <div class="footer-about">
-                <span class="logo-text">Kisans <span>Villa</span></span>
+                <span class="logo-text"> <span>Kisans Villa</span></span>
                 <p>Experience authentic Wayanad hospitality in our premium family retreat. Tranquility meets luxury in
                     the heart of nature.</p>
             </div>
@@ -542,14 +626,10 @@
             <div class="footer-contact">
                 <h4>Newsletter</h4>
                 <p>Subscribe for seasonal offers and Wayanad travel tips.</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Your email address">
-                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                </form>
             </div>
         </div>
         <div class="footer-bottom container">
-            <p>&copy; 2024 Kisans Villa Homestay. All Rights Reserved.</p>
+            <p>&copy; 2026 Kisans Villa Homestay. All Rights Reserved.</p>
             <div class="footer-legal">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
@@ -557,7 +637,7 @@
         </div>
     </footer>
 
-    <!-- Sticky Mobile Buttons -->
+    <!-- Sticky Bottom Mobile Navigation Bar -->
     <div class="sticky-mobile-nav">
         <a href="tel:+919846294858" class="sticky-btn call-btn">
             <i class="fas fa-phone"></i>
@@ -573,56 +653,19 @@
         </a>
     </div>
 
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Kisans Villa Homestay",
-      "image": "https://kisansvilla.com/assets/hero-exterior.jpg",
-      "@id": "https://kisansvilla.com",
-      "url": "https://kisansvilla.com",
-      "telephone": "+919846294858",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Varadimoola",
-        "addressLocality": "Mananthavady",
-        "addressRegion": "Kerala",
-        "postalCode": "670645",
-        "addressCountry": "IN"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 11.8104199,
-        "longitude": 76.0222202
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-          "Sunday"
-        ],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://www.facebook.com/KisansVillaHomestay",
-        "https://www.instagram.com/KisansVillaHomestay"
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "5.0",
-        "reviewCount": "120"
-      }
-    }
-    </script>
+    <!-- Lightbox Modal for Gallery -->
+    <div id="gallery-lightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous Image"><i
+                class="fas fa-chevron-left"></i></button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="Enlarged gallery view">
+            <div id="lightbox-caption"></div>
+        </div>
+        <button class="lightbox-btn lightbox-next" aria-label="Next Image"><i class="fas fa-chevron-right"></i></button>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1"></script>
 </body>
 
 </html>
