@@ -5,6 +5,15 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+    const runWhenIdle = (callback) => {
+        if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(callback, { timeout: 2500 });
+            return;
+        }
+
+        window.addEventListener('load', () => window.setTimeout(callback, 0), { once: true });
+    };
+
     /* ==========================================
        HERO ROTATING WORD (baseline-safe)
        ========================================== */
@@ -71,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const bubblesContainer = document.querySelector('.bubbles-container');
         if (!bubblesContainer) return;
 
-        const bubbleCount = 22;
+        const bubbleCount = 14;
         const colors = [
             {
                 glow: 'rgba(200, 169, 106, 0.4)', // Warm Metallic Gold
@@ -131,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             bubblesContainer.appendChild(bubble);
         }
     };
-    initAmbientBubbles();
+    runWhenIdle(initAmbientBubbles);
 
     /* ==========================================
        2. HEADER SCROLL & MOBILE NAVIGATION DRAWER
@@ -529,27 +538,25 @@ document.addEventListener('DOMContentLoaded', () => {
        ========================================== */
     let lastKnownScrollPosition = 0;
     let ticking = false;
+    const heroBg = document.querySelector('.hero-bg');
+    const aboutSection = document.querySelector('.about');
+    const aboutImage = document.querySelector('.about-image .img-wrapper img');
 
     const executeParallaxEffects = (scrollPos) => {
         // Hero Parallax effect
-        const heroBg = document.querySelector('.hero-bg');
         if (heroBg) {
             heroBg.style.transform = `translateY(${scrollPos * 0.22}px) scale(${1.08 + (scrollPos * 0.0001)})`;
         }
 
         // About Layout Parallax offset
-        const aboutWrapper = document.querySelector('.about-image .img-wrapper img');
-        if (aboutWrapper) {
-            const aboutSection = document.querySelector('.about');
-            if (aboutSection) {
-                const sectionRect = aboutSection.getBoundingClientRect();
-                const windowHeight = window.innerHeight;
+        if (aboutImage && aboutSection) {
+            const sectionRect = aboutSection.getBoundingClientRect();
+            const windowHeight = window.innerHeight;
 
-                // Only calculate if visible
-                if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-                    const offset = (windowHeight - sectionRect.top) * 0.08;
-                    aboutWrapper.style.transform = `translateY(${offset}px)`;
-                }
+            // Only calculate if visible
+            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
+                const offset = (windowHeight - sectionRect.top) * 0.08;
+                aboutImage.style.transform = `translateY(${offset}px)`;
             }
         }
     };
