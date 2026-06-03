@@ -655,7 +655,7 @@ p strong {
     background-size: cover;
     background-position: center 82%;
     will-change: transform;
-    animation: heroZoom 22s infinite alternate ease-in-out;
+    /* Removed heroZoom CSS animation — JS parallax handles transform exclusively to avoid non-composited animation warning */
 }
 
 /* Ambient bubbles layer (elements created in script.js) */

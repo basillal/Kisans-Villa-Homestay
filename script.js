@@ -542,20 +542,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const aboutSection = document.querySelector('.about');
     const aboutImage = document.querySelector('.about-image .img-wrapper img');
 
+    // Cache section geometry — avoids forced reflow on every scroll frame
+    let cachedAboutTop = 0;
+    let cachedAboutHeight = 0;
+
+    const updateAboutCache = () => {
+        if (aboutSection) {
+            // Safe to read layout here (not inside scroll handler)
+            cachedAboutTop = aboutSection.offsetTop;
+            cachedAboutHeight = aboutSection.offsetHeight;
+        }
+    };
+
+    // Populate cache once DOM is ready, and refresh on resize
+    updateAboutCache();
+    window.addEventListener('resize', updateAboutCache, { passive: true });
+
     const executeParallaxEffects = (scrollPos) => {
-        // Hero Parallax effect
+        // Hero Parallax — GPU composited (only transform, no layout reads)
         if (heroBg) {
             heroBg.style.transform = `translateY(${scrollPos * 0.22}px) scale(${1.08 + (scrollPos * 0.0001)})`;
         }
 
-        // About Layout Parallax offset
+        // About image parallax — uses cached values, zero forced reflow
         if (aboutImage && aboutSection) {
-            const sectionRect = aboutSection.getBoundingClientRect();
             const windowHeight = window.innerHeight;
+            const sectionRelativeTop = cachedAboutTop - scrollPos;
 
-            // Only calculate if visible
-            if (sectionRect.top < windowHeight && sectionRect.bottom > 0) {
-                const offset = (windowHeight - sectionRect.top) * 0.08;
+            if (sectionRelativeTop < windowHeight && sectionRelativeTop + cachedAboutHeight > 0) {
+                const offset = (windowHeight - sectionRelativeTop) * 0.08;
                 aboutImage.style.transform = `translateY(${offset}px)`;
             }
         }
