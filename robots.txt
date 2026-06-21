@@ -10,4 +10,4 @@ User-agent: Googlebot-Image
 Allow: /assets/
 
 # Sitemap location
-Sitemap: https://kisansvillahomestay.vercel.app/sitemap.xml
+Sitemap: https://kisansvillahomestay.com/sitemap.xml

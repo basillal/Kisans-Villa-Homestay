@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://kisansvillahomestay.vercel.app/</loc>
+    <loc>https://kisansvillahomestay.com/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://kisansvillahomestay.vercel.app/assets/kisan-villa-landing.jpeg</image:loc>
+      <image:loc>https://kisansvillahomestay.com/assets/kisan-villa-landing.jpeg</image:loc>
       <image:title>Kisans Villa Homestay - Luxury Homestay in Mananthavady, Wayanad</image:title>
       <image:caption>Front view of Kisans Villa Homestay in Varadimoola, Mananthavady, Wayanad, Kerala</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://kisansvillahomestay.vercel.app/assets/kisan-villa-front-view.jpeg</image:loc>
+      <image:loc>https://kisansvillahomestay.com/assets/kisan-villa-front-view.jpeg</image:loc>
       <image:title>Kisans Villa - Premium Family Retreat in Wayanad</image:title>
       <image:caption>Kisans Villa Homestay exterior - private villa in Varadimoola, Wayanad</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://kisansvillahomestay.vercel.app/assets/Kisans%20Villa%20Images%202.webp</image:loc>
+      <image:loc>https://kisansvillahomestay.com/assets/Kisans%20Villa%20Images%202.webp</image:loc>
       <image:title>Kisans Villa Sit-out Area - Wayanad Homestay</image:title>
       <image:caption>Beautiful sit-out area at Kisans Villa Homestay, Wayanad</image:caption>
     </image:image>
