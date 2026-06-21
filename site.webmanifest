@@ -1,0 +1,24 @@
+{
+  "name": "Kisans Villa Homestay",
+  "short_name": "Kisans Villa",
+  "description": "Luxury homestay in Varadimoola, Mananthavady, Wayanad, Kerala. 3 premium rooms, home-cooked meals, free Wi-Fi & parking.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2ECE0",
+  "theme_color": "#C8A96A",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/assets/kisakvilla-fav.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/kisakvilla-fav.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

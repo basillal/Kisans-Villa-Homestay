@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
 
+# Block unnecessary crawling of assets (saves crawl budget)
+Disallow: /.git/
+Disallow: /.agent/
+
+# Allow Google to crawl all images
+User-agent: Googlebot-Image
+Allow: /assets/
+
 # Sitemap location
-Sitemap: https://kisansvillahomestay.vercel.app/sitemap.xml
+Sitemap: https://kisansvillahomestay.com/sitemap.xml
