@@ -111,6 +111,11 @@ img {
     stroke-linejoin: round;
 }
 
+.brand-icon-svg {
+    stroke: none !important;
+    fill: currentColor !important;
+}
+
 .brand-icon {
     display: inline-flex;
     align-items: center;
@@ -279,6 +284,7 @@ p strong {
 .bg-dark {
     background-color: var(--bg-secondary);
 }
+
 /* ==========================================
    LUXURY PILL BUTTONS (GOLD GRADIENT & HOVER LIFT)
    ========================================== */
@@ -789,6 +795,7 @@ p strong {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .hero-rotating-word.rot-exit,
     .hero-rotating-word.rot-enter {
         animation: none !important;
@@ -823,9 +830,10 @@ p strong {
 
 .hero-stats {
     display: flex;
-    gap: 60px;
-    border-top: 1px solid rgba(200, 169, 106, 0.15);
-    padding-top: 40px;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    max-width: 600px;
     opacity: 1;
     transform: translateY(12px);
     animation: heroContentIn 0.8s forwards cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
@@ -834,22 +842,36 @@ p strong {
 .stat-card {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+.stat-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background: rgba(200, 169, 106, 0.3);
 }
 
 .stat-number {
+    display: block;
     font-family: var(--font-heading);
-    font-size: 2.4rem;
-    color: white;
-    margin-bottom: 5px;
-    font-weight: 400;
+    font-size: 2.2rem;
+    color: #c8a96a;
+    margin-bottom: 2px;
+    font-weight: 300;
+    line-height: 1;
 }
 
 .stat-text {
     font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: white;
-    font-weight: 600;
+    letter-spacing: 0.15em;
 }
 
 @keyframes revealIn {
@@ -1265,7 +1287,7 @@ p strong {
         width: 64px !important;
         height: 64px !important;
         border-width: 1px !important;
-        box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
     }
 
     .slider-arrow i {
@@ -1799,7 +1821,8 @@ p strong {
     box-shadow: 0 10px 25px rgba(37, 211, 102, 0.28);
 }
 
-.whatsapp-btn i {
+.whatsapp-btn i,
+.whatsapp-btn .ui-icon {
     font-size: 1.3rem;
 }
 
@@ -2118,6 +2141,144 @@ p strong {
 
 
 /* ==========================================
+   FREQUENTLY ASKED QUESTIONS (FAQ ACCORDION)
+   ========================================== */
+.faq-accordion {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--bg-card);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--card-radius);
+    margin-bottom: 18px;
+    overflow: hidden;
+    transition: var(--transition-medium);
+}
+
+.faq-item:hover {
+    border-color: rgba(200, 169, 106, 0.45);
+    box-shadow: var(--soft-shadow);
+}
+
+.faq-trigger {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 24px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    gap: 20px;
+    transition: var(--transition-fast);
+}
+
+.faq-trigger:focus-visible {
+    background-color: rgba(200, 169, 106, 0.05);
+}
+
+.faq-question {
+    line-height: 1.4;
+    transition: color var(--transition-fast);
+}
+
+.faq-trigger:hover .faq-question {
+    color: var(--accent-gold);
+}
+
+.faq-icon {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    flex-shrink: 0;
+    color: var(--accent-gold);
+    transition: transform var(--transition-medium);
+}
+
+/* Plus line horizontal */
+.faq-icon::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 2px;
+    background-color: currentColor;
+    top: 9px;
+    left: 3px;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Plus line vertical */
+.faq-icon::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 14px;
+    background-color: currentColor;
+    top: 3px;
+    left: 9px;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Open states */
+.faq-trigger[aria-expanded="true"] {
+    padding-bottom: 12px;
+}
+
+.faq-trigger[aria-expanded="true"] .faq-question {
+    color: var(--accent-gold);
+}
+
+.faq-trigger[aria-expanded="true"] .faq-icon {
+    transform: rotate(135deg);
+}
+
+.faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-content[aria-hidden="false"] {
+    grid-template-rows: 1fr;
+}
+
+.faq-body {
+    overflow: hidden;
+}
+
+.faq-body p {
+    padding: 0 30px 24px;
+    font-family: var(--font-body);
+    font-size: 0.98rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.faq-body a {
+    color: var(--accent-gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.faq-body a:hover {
+    color: var(--accent-gold-hover);
+    text-decoration: underline;
+}
+
+
+/* ==========================================
    FOOTER (ELEGANT TROPICAL CHARCOAL MINIMAL)
    ========================================== */
 footer {
@@ -2144,6 +2305,25 @@ footer {
     font-size: 0.95rem;
     line-height: 1.85;
     max-width: 400px;
+}
+
+.footer-about .social-links {
+    margin-top: 25px;
+}
+
+.footer-about .social-icon {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #DFDFDF;
+    box-shadow: none;
+}
+
+.footer-about .social-icon:hover {
+    border-color: var(--accent-gold);
+    color: #FFF;
+    background: var(--gold-gradient);
+    transform: translateY(-3px);
+    box-shadow: var(--gold-glow);
 }
 
 .footer-links h4,
@@ -2413,25 +2593,10 @@ footer {
     font-size: 1.15rem;
 }
 
-.sticky-btn.call-btn:hover,
-.sticky-btn.call-btn:active {
-    color: var(--text-primary);
-    background-color: rgba(200, 169, 106, 0.05);
-}
-
-.sticky-btn.map-btn:hover,
-.sticky-btn.map-btn:active {
+.sticky-btn:hover,
+.sticky-btn:active {
     color: var(--accent-gold);
-    background-color: rgba(200, 169, 106, 0.05);
-}
-
-.sticky-btn.book-btn {
-    color: #128C7E;
-}
-
-.sticky-btn.book-btn:hover,
-.sticky-btn.book-btn:active {
-    background-color: rgba(37, 211, 102, 0.08);
+    background-color: rgba(200, 169, 106, 0.08);
 }
 
 /* ==========================================
@@ -2551,7 +2716,12 @@ footer {
 
     .hero-stats {
         gap: 30px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stat-card:not(:last-child)::after {
+        display: none;
     }
 
     .amenities-grid {
