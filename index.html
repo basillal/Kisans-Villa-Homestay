@@ -484,35 +484,46 @@
         }
 
         .hero-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
             margin-top: 50px;
-            max-width: 550px
+            max-width: 600px
         }
 
         .stat-card {
-            padding: 18px 15px;
-            background: rgba(242, 236, 224, .12);
-            border: 1px solid rgba(200, 169, 106, .2);
-            border-radius: var(--card-radius);
-            text-align: center;
-            backdrop-filter: blur(8px)
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            position: relative;
+        }
+
+        .stat-card:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 40px;
+            width: 1px;
+            background: rgba(200, 169, 106, 0.3);
         }
 
         .stat-number {
             display: block;
             font-family: var(--font-heading);
-            font-size: 2rem;
-            color: #FFF;
-            font-weight: 300
+            font-size: 2.2rem;
+            color: #c8a96a;
+            margin-bottom: 2px;
+            font-weight: 300;
+            line-height: 1
         }
 
         .stat-text {
-            font-size: .72rem;
-            color: rgba(255, 255, 255, .65);
+            font-size: .75rem;
+            color: rgba(255, 255, 255, .8);
             text-transform: uppercase;
-            letter-spacing: .2em
+            letter-spacing: .15em
         }
 
         .scroll-indicator {
@@ -1151,10 +1162,6 @@
                     <span class="stat-text">Nature Tranquility</span>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse"></div>
-            <span>Scroll to discover</span>
         </div>
     </section>
 

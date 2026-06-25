@@ -588,4 +588,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, { passive: true });
 
+    /* ==========================================
+       9. FAQ ACCORDION SYSTEM
+       ========================================== */
+    const faqTriggers = document.querySelectorAll('.faq-trigger');
+    
+    faqTriggers.forEach(trigger => {
+        trigger.addEventListener('click', () => {
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            const controls = trigger.getAttribute('aria-controls');
+            const content = document.getElementById(controls);
+            
+            // Close all other open items
+            faqTriggers.forEach(otherTrigger => {
+                if (otherTrigger !== trigger) {
+                    otherTrigger.setAttribute('aria-expanded', 'false');
+                    const otherControls = otherTrigger.getAttribute('aria-controls');
+                    const otherContent = document.getElementById(otherControls);
+                    if (otherContent) {
+                        otherContent.setAttribute('aria-hidden', 'true');
+                        // Add max-height reset if CSS is based on it, though CSS uses grid or max-height
+                    }
+                }
+            });
+
+            // Toggle current item
+            trigger.setAttribute('aria-expanded', !isExpanded);
+            if (content) {
+                content.setAttribute('aria-hidden', isExpanded);
+            }
+        });
+    });
+
 });

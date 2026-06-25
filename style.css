@@ -830,9 +830,10 @@ p strong {
 
 .hero-stats {
     display: flex;
-    gap: 60px;
-    border-top: 1px solid rgba(200, 169, 106, 0.15);
-    padding-top: 40px;
+    align-items: center;
+    gap: 40px;
+    margin-top: 50px;
+    max-width: 600px;
     opacity: 1;
     transform: translateY(12px);
     animation: heroContentIn 0.8s forwards cubic-bezier(0.16, 1, 0.3, 1) 0.2s;
@@ -841,22 +842,36 @@ p strong {
 .stat-card {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    position: relative;
+}
+
+.stat-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 1px;
+    background: rgba(200, 169, 106, 0.3);
 }
 
 .stat-number {
+    display: block;
     font-family: var(--font-heading);
-    font-size: 2.4rem;
-    color: white;
-    margin-bottom: 5px;
-    font-weight: 400;
+    font-size: 2.2rem;
+    color: #c8a96a;
+    margin-bottom: 2px;
+    font-weight: 300;
+    line-height: 1;
 }
 
 .stat-text {
     font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
-    color: white;
-    font-weight: 600;
+    letter-spacing: 0.15em;
 }
 
 @keyframes revealIn {
@@ -2578,25 +2593,10 @@ footer {
     font-size: 1.15rem;
 }
 
-.sticky-btn.call-btn:hover,
-.sticky-btn.call-btn:active {
-    color: var(--text-primary);
-    background-color: rgba(200, 169, 106, 0.05);
-}
-
-.sticky-btn.map-btn:hover,
-.sticky-btn.map-btn:active {
+.sticky-btn:hover,
+.sticky-btn:active {
     color: var(--accent-gold);
-    background-color: rgba(200, 169, 106, 0.05);
-}
-
-.sticky-btn.book-btn {
-    color: #128C7E;
-}
-
-.sticky-btn.book-btn:hover,
-.sticky-btn.book-btn:active {
-    background-color: rgba(37, 211, 102, 0.08);
+    background-color: rgba(200, 169, 106, 0.08);
 }
 
 /* ==========================================
@@ -2716,7 +2716,12 @@ footer {
 
     .hero-stats {
         gap: 30px;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .stat-card:not(:last-child)::after {
+        display: none;
     }
 
     .amenities-grid {
