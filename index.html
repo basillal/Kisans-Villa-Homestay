@@ -691,7 +691,7 @@
         "latitude": 11.8030,
         "longitude": 76.0070
       },
-      "hasMap": "https://maps.app.goo.gl/vbKAJJSENkekvc7W7",
+      "hasMap": "https://maps.app.goo.gl/KeDxQxAM4sJEWqbk7",
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5.0",
@@ -725,7 +725,11 @@
       },
       "sameAs": [
         "https://kisansvillahomestay.com",
-        "https://maps.app.goo.gl/vbKAJJSENkekvc7W7"
+        "https://maps.app.goo.gl/KeDxQxAM4sJEWqbk7",
+        "https://www.facebook.com/profile.php?id=61590947073337",
+        "https://www.instagram.com/kisans_villa/",
+        "https://medium.com/@kisansvillahomestay",
+        "https://www.youtube.com/@Kisans-Villa-Homestay"
       ],
       "review": [
         {
@@ -953,10 +957,10 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XM75YRJR8J"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XM75YRJR8J');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XM75YRJR8J');
     </script>
 </head>
 
@@ -1058,6 +1062,25 @@
             <path
                 d="M9.6 8.5c.2-.4.5-.5.8-.4l1 .3c.3.1.5.4.4.8l-.2 1c-.1.3 0 .5.2.8.4.6 1.2 1.5 2.1 2.1.3.2.5.3.8.2l1-.2c.4-.1.7.1.8.4l.3 1c.1.3 0 .6-.3.8-.6.5-1.4.8-2.2.8-2.5 0-5.5-2.5-5.8-5.7 0-.9.3-1.7.8-2.1z"
                 fill="none" />
+        </symbol>
+        <symbol id="icon-facebook" viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" />
+        </symbol>
+        <symbol id="icon-instagram" viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" />
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" />
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" fill="none" />
+        </symbol>
+        <symbol id="icon-youtube" viewBox="0 0 24 24">
+            <path
+                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                fill="none" />
+            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="none" />
+        </symbol>
+        <symbol id="icon-medium" viewBox="0 0 24 24">
+            <circle cx="5" cy="12" r="4" fill="none" />
+            <ellipse cx="12.5" cy="12" rx="2" ry="4" fill="none" />
+            <ellipse cx="18.5" cy="12" rx="1" ry="4" fill="none" />
         </symbol>
     </svg>
 
@@ -1722,11 +1745,31 @@
                     </div>
 
                     <div class="social-links scroll-reveal" style="margin-left: 60px; transition-delay: 0.3s">
-                        <a href="https://www.facebook.com/profile.php?id=61590947073337" aria-label="Facebook"
-                            class="social-icon">Facebook</a>
-                        <a href="https://www.instagram.com/kisans_villa/" aria-label="Instagram"
-                            class="social-icon">Instagram</a>
-                        <a href="https://maps.app.goo.gl/vbKAJJSENkekvc7W7" target="_blank"
+                        <a href="https://www.facebook.com/profile.php?id=61590947073337" target="_blank"
+                            aria-label="Facebook" class="social-icon">
+                            <svg class="ui-icon">
+                                <use href="#icon-facebook"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/kisans_villa/" target="_blank" aria-label="Instagram"
+                            class="social-icon">
+                            <svg class="ui-icon">
+                                <use href="#icon-instagram"></use>
+                            </svg>
+                        </a>
+                        <a href="https://medium.com/@kisansvillahomestay" target="_blank" aria-label="Medium"
+                            class="social-icon">
+                            <svg class="ui-icon">
+                                <use href="#icon-medium"></use>
+                            </svg>
+                        </a>
+                        <a href="https://www.youtube.com/@Kisans-Villa-Homestay" target="_blank" aria-label="YouTube"
+                            class="social-icon">
+                            <svg class="ui-icon">
+                                <use href="#icon-youtube"></use>
+                            </svg>
+                        </a>
+                        <a href="https://maps.app.goo.gl/KeDxQxAM4sJEWqbk7" target="_blank"
                             class="btn btn-outline small">Get Directions</a>
                     </div>
                 </div>
@@ -1748,6 +1791,32 @@
                 <span class="logo-text"> <span>Kisans Villa</span></span>
                 <p>Experience authentic Wayanad hospitality in our premium family retreat. Tranquility meets luxury in
                     the heart of nature.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61590947073337" target="_blank"
+                        aria-label="Facebook" class="social-icon">
+                        <svg class="ui-icon">
+                            <use href="#icon-facebook"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/kisans_villa/" target="_blank" aria-label="Instagram"
+                        class="social-icon">
+                        <svg class="ui-icon">
+                            <use href="#icon-instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="https://medium.com/@kisansvillahomestay" target="_blank" aria-label="Medium"
+                        class="social-icon">
+                        <svg class="ui-icon">
+                            <use href="#icon-medium"></use>
+                        </svg>
+                    </a>
+                    <a href="https://www.youtube.com/@Kisans-Villa-Homestay" target="_blank" aria-label="YouTube"
+                        class="social-icon">
+                        <svg class="ui-icon">
+                            <use href="#icon-youtube"></use>
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -1780,7 +1849,7 @@
             </svg>
             <span>Call Now</span>
         </a>
-        <a href="https://maps.app.goo.gl/vbKAJJSENkekvc7W7" target="_blank" class="sticky-btn map-btn">
+        <a href="https://maps.app.goo.gl/KeDxQxAM4sJEWqbk7" target="_blank" class="sticky-btn map-btn">
             <svg class="ui-icon">
                 <use href="#icon-map-marker"></use>
             </svg>
@@ -1795,8 +1864,9 @@
     <!-- Lightbox Modal for Gallery -->
     <div id="gallery-lightbox" class="lightbox-modal">
         <span class="lightbox-close">&times;</span>
-        <button class="lightbox-btn lightbox-prev" aria-label="Previous Image"><i class="ui-icon">
-                <use href="#icon-chevron-left"></use></svg></button>
+        <button class="lightbox-btn lightbox-prev" aria-label="Previous Image"><svg class="ui-icon">
+                <use href="#icon-chevron-left"></use>
+            </svg></button>
         <div class="lightbox-content">
             <img id="lightbox-img" src="" alt="Enlarged gallery view">
             <div id="lightbox-caption"></div>
