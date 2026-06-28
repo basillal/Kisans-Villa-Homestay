@@ -1519,10 +1519,28 @@ p strong {
 }
 
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 240px;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     gap: 30px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-gold) rgba(0,0,0,0.05);
+    -webkit-overflow-scrolling: touch;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.gallery-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+
+.gallery-grid::-webkit-scrollbar-thumb {
+    background: var(--accent-gold);
+    border-radius: 10px;
 }
 
 .gallery-item {
@@ -1532,20 +1550,21 @@ p strong {
     border: 1px solid var(--glass-border);
     border-radius: var(--card-radius);
     box-shadow: var(--soft-shadow);
+    flex: 0 0 auto;
+    height: 400px;
+    scroll-snap-align: center;
 }
 
 .gallery-item.large {
-    grid-column: span 8;
-    grid-row: span 2;
+    width: 600px;
 }
 
 .gallery-item:not(.large):not(.wide) {
-    grid-column: span 4;
+    width: 350px;
 }
 
 .gallery-item.wide {
-    grid-column: span 12;
-    grid-row: span 1.5;
+    width: 800px;
 }
 
 .gallery-item img {
@@ -1602,6 +1621,29 @@ p strong {
     font-size: 1.5rem;
     color: var(--text-primary);
     font-weight: 400;
+}
+
+/* Gallery Slider Navigation positioning (Side by Side) */
+.slider-nav.gallery-slider-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    bottom: auto; /* override .slider-nav bottom offset */
+    pointer-events: none; /* Let clicks pass through empty space */
+    padding: 0 20px; /* edge spacing */
+    z-index: 10;
+    margin-top: 0;
+}
+
+.slider-nav.gallery-slider-nav button {
+    pointer-events: auto; /* Enable clicks on the buttons */
+    /* Enhance visibility over images */
+    background: rgba(245, 241, 232, 0.95);
+    backdrop-filter: blur(8px);
 }
 
 /* ==========================================
@@ -2643,23 +2685,20 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: 200px;
+    .gallery-item {
+        height: 300px;
     }
 
     .gallery-item.large {
-        grid-column: span 2;
-        grid-row: span 2;
+        width: 450px;
     }
 
     .gallery-item:not(.large):not(.wide) {
-        grid-column: span 1;
+        width: 250px;
     }
 
     .gallery-item.wide {
-        grid-column: span 2;
-        grid-row: span 1;
+        width: 600px;
     }
 
     .footer-grid {
@@ -2743,6 +2782,22 @@ footer {
 
     .experience-card {
         height: 240px;
+    }
+
+    .gallery-item {
+        height: 250px;
+    }
+
+    .gallery-item.large {
+        width: 300px;
+    }
+
+    .gallery-item:not(.large):not(.wide) {
+        width: 220px;
+    }
+
+    .gallery-item.wide {
+        width: 320px;
     }
 
     .booking-card {

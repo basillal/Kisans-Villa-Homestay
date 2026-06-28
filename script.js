@@ -315,6 +315,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ==========================================
+       3.5. HORIZONTAL GALLERY SLIDER NAVIGATION
+       ========================================== */
+    const gallerySlider = document.getElementById('gallery-slider');
+    const gallerySlidePrev = document.getElementById('gallery-slide-prev');
+    const gallerySlideNext = document.getElementById('gallery-slide-next');
+
+    if (gallerySlider) {
+        const GALLERY_SCROLL_AMOUNT = 400; // Adjust scroll distance per click
+        
+        if (gallerySlidePrev) {
+            gallerySlidePrev.addEventListener('click', () => {
+                gallerySlider.scrollBy({ left: -GALLERY_SCROLL_AMOUNT, behavior: 'smooth' });
+            });
+        }
+        if (gallerySlideNext) {
+            gallerySlideNext.addEventListener('click', () => {
+                gallerySlider.scrollBy({ left: GALLERY_SCROLL_AMOUNT, behavior: 'smooth' });
+            });
+        }
+    }
+
+    /* ==========================================
        4. LUXURY GALLERY LIGHTBOX SYSTEM
        ========================================== */
     const galleryItems = document.querySelectorAll('.gallery-item');
